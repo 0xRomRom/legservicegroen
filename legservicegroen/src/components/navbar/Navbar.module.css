@@ -16,3 +16,41 @@
   left: 0;
   cursor: pointer;
 }
+
+.navlist {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  overflow: hiddenn;
+}
+
+.links {
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+  font-weight: 700;
+  color: white;
+  text-shadow: 0px 0px 70px black;
+  transition: all 0.45s ease-in-out;
+  position: relative;
+  padding: 0.25rem;
+
+  border-radius: 0.2rem;
+  border-bottom: 1px solid transparent;
+}
+
+.link:hover {
+  border-bottom: 1px solid black;
+}
+
+.active {
+  color: black;
+}
+
+.active:hover {
+  border-bottom: 1px solid transparent;
+}
