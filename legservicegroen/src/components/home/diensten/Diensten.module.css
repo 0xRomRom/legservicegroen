@@ -1,0 +1,134 @@
+.diensten {
+  height: 40rem;
+  /* background-color: green; */
+  margin-top: 10rem;
+  margin-bottom: 10rem;
+  padding-left: 7rem;
+}
+
+.topFlex {
+  position: relative;
+  display: flex;
+  padding-top: 3rem;
+  align-items: flex-end;
+}
+
+.heroTitle {
+  color: black;
+  font-size: 48px;
+}
+
+.copy {
+  /* border: 1px solid red; */
+  width: 28rem;
+  font-size: 18px;
+}
+
+.blackshape {
+  width: 40px;
+  height: 11px;
+  background-color: rgb(103, 202, 207);
+  border-radius: 3rem;
+  margin-left: 10px;
+  position: relative;
+  top: -12px;
+}
+
+.specialGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+.gridModal1 {
+  margin-top: 8rem;
+  width: 15rem;
+  height: 20rem;
+  /* border: 1px solid red; */
+  border-radius: 0.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: url("../../../assets/Floor1.jpg");
+  background-position: bottom;
+  background-size: 300%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 3px black;
+}
+
+.gridModal1:hover .innerContainer {
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
+.gridModal2 {
+  margin-top: 8rem;
+  width: 15rem;
+  height: 20rem;
+  /* border: 1px solid red; */
+  border-radius: 0.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: url("../../../assets/Floor2.jpg");
+  background-position: bottom;
+  background-size: 460%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 3px black;
+}
+.gridModal2:hover .innerContainer {
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
+.gridModal3 {
+  margin-top: 8rem;
+  width: 15rem;
+  height: 20rem;
+  /* border: 1px solid red; */
+  border-radius: 0.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: url("../../../assets/Floor4.jpg");
+  background-position: bottom;
+  background-size: 195%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 3px black;
+}
+
+.gridModal3:hover .innerContainer {
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
+.innerContainer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 1rem;
+  transition: all 1s ease-in-out;
+  transform: translateY(75%);
+}
+
+.innerContainer h3 {
+  color: white;
+  text-align: center;
+  width: 100%;
+  z-index: 10;
+  font-size: 42px;
+  bottom: 10px;
+}
+
+.gridImg {
+  position: absolute;
+  width: 300%;
+  left: -90%;
+  object-fit: contain;
+}
+
+.modalCopy {
+  color: white;
+  margin-top: 1rem;
+}

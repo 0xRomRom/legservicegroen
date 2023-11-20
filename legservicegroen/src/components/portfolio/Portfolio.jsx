@@ -9,7 +9,12 @@ const Portfolio = () => {
       animate={{ y: "0%" }}
       transition={{ duration: 0.75, ease: "easeOut" }}
       exit={{ opacity: 1 }}
-    ></m.div>
+    >
+      <div className={stl.flexdiv}>
+        <h1>Portfolio</h1>
+        <div className={stl.blackshape}></div>
+      </div>
+    </m.div>
   );
 };
 

@@ -1,4 +1,27 @@
 .portfolio {
+  position: relative;
+  margin-top: 6rem;
   height: 40rem;
-  background-color: green;
+  text-align: start;
+}
+
+.portfolio h1 {
+  color: black;
+  font-size: 48px;
+  margin-left: 7rem;
+}
+
+.blackshape {
+  width: 40px;
+  height: 11px;
+  background-color: rgb(103, 202, 207);
+  border-radius: 3rem;
+  margin-left: 10px;
+  position: relative;
+  top: -13px;
+}
+
+.flexdiv {
+  display: flex;
+  align-items: flex-end;
 }

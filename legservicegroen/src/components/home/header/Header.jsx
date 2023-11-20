@@ -2,39 +2,32 @@ import stl from "./Header.module.css";
 import Floor1 from "../../../assets/Floor1.jpg";
 import Floor2 from "../../../assets/Floor2.jpg";
 import Floor3 from "../../../assets/Floor3.jpg";
+import Floor4 from "../../../assets/Floor4.jpg";
 import Blanklogo from "../../../assets/Blanklogo.png";
 import { useState, useEffect } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
 
 const Header = () => {
-  const [floorType, setFloorType] = useState("Hout");
   const [currentImage, setCurrentImage] = useState(Floor1);
-  const floorTypes = ["Hout", "PVC", "Beton"];
-  const floorImages = [Floor1, Floor2, Floor3];
+  const [floorType, setFloorType] = useState("Hout");
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const floorTypes = ["Klassiek", "PVC", "Breed", "Eik"];
+  const floorImages = [Floor1, Floor2, Floor3, Floor4];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
-      // Generate a random index to choose a different floor type
-      const randomIndex = Math.floor(Math.random() * floorTypes.length);
-      setFloorType(floorTypes[randomIndex]);
-      setCurrentImage(floorImages[randomIndex]);
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % floorTypes.length);
+
+      setFloorType(floorTypes[currentImageIndex]);
+      setCurrentImage(floorImages[currentImageIndex]);
     }, 4000);
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, [floorImages, floorTypes]);
+  }, [currentImageIndex, floorImages, floorTypes]);
 
   return (
-    <m.header
-      className={stl.header}
-      initial={{ y: "100%" }}
-      animate={{ y: "0%" }}
-      transition={{
-        duration: 0.75,
-        ease: "easeOut",
-      }}
-      exit={{ opacity: 1 }}
-    >
+    <header className={stl.header}>
       <div className={stl.leftblock}>
         <m.h1
           animate={{ y: 0 }}
@@ -59,20 +52,28 @@ const Header = () => {
         </m.div>
       </div>
       <div className={stl.rightblock}>
-        <span className={stl.floortype}>{floorType}</span>
         <AnimatePresence mode="wait">
+          <m.span
+            className={stl.floortype}
+            initial={{ opacity: 0.8 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+          >
+            {floorType}
+          </m.span>
           <m.img
             key={currentImage}
             src={currentImage}
             alt="Floor"
-            initial={{ opacity: 0 }}
+            initial={{ opacity: 0.8 }}
             animate={{ opacity: 1 }}
-            exit={{ opacity: 0.3 }}
-            transition={{ duration: 0.4, ease: "easeOut" }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           />
         </AnimatePresence>
       </div>
-    </m.header>
+    </header>
   );
 };
 
