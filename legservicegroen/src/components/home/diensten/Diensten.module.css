@@ -103,6 +103,27 @@
   background-color: rgba(0, 0, 0, 0.534);
 }
 
+.gridModal4 {
+  margin-top: 8rem;
+  width: 15rem;
+  height: 20rem;
+  /* border: 1px solid red; */
+  border-radius: 0.4rem;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  background: url("../../../assets/Egaliseren.jpg");
+  background-position: bottom;
+  background-size: 200%;
+  background-repeat: no-repeat;
+  box-shadow: 0px 0px 3px black;
+}
+
+.gridModal4:hover .innerContainer {
+  transform: translateY(0%);
+  background-color: rgba(0, 0, 0, 0.534);
+}
+
 .innerContainer {
   position: absolute;
   width: 100%;
@@ -131,4 +152,51 @@
 .modalCopy {
   color: white;
   margin-top: 1rem;
+}
+
+.gridModal5 {
+  margin-top: 8rem;
+  width: 15rem;
+  height: 20rem;
+  /* border: 1px solid red; */
+  border-radius: 0.4rem;
+  background: linear-gradient(90deg, white, gray);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0px 0px 3px rgb(238, 238, 238);
+  user-select: none;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.meer {
+  font-size: 32px;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.arrowRight {
+  margin-top: 10px;
+  margin-left: 10px;
+  font-size: 32px;
+  color: black;
+  transition: all 0.5s ease-in-out;
+}
+
+.gridModal5:hover .arrowRight {
+  transform: translateX(0.75rem);
+  color: black;
+}
+
+.gridModal5:hover .meer {
+  transform: translateX(0.25rem);
+  color: black;
+}
+
+.gridModal5:hover {
+  transform: translateX(1rem);
+  color: black;
 }

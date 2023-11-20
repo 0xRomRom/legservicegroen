@@ -1,4 +1,5 @@
 import stl from "./Diensten.module.css";
+import { FaArrowRight } from "react-icons/fa";
 
 const Diensten = () => {
   return (
@@ -46,6 +47,21 @@ const Diensten = () => {
               vleugje elegantie toe aan elke ruimte.
             </p>
           </div>
+        </div>
+        <div className={stl.gridModal4}>
+          <div className={stl.innerContainer}>
+            <h3>Egaliseren</h3>
+            <p className={stl.modalCopy}>
+              Egaliseren legt de basis voor een perfecte vloerinstallatie. Het
+              proces van vloeren egaliseren zorgt voor een glad oppervlak,
+              waardoor oneffenheden worden geëlimineerd en de duurzaamheid van
+              de vloer wordt vergroot.
+            </p>
+          </div>
+        </div>
+        <div className={stl.gridModal5}>
+          <h3 className={stl.meer}>Meer</h3>
+          <FaArrowRight className={stl.arrowRight} />
         </div>
       </div>
     </div>
