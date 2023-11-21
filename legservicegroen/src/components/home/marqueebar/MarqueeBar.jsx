@@ -30,7 +30,7 @@ const MarqueeBar = () => {
         className={stl.heroRow}
         initial={{ opacity: 0, x: "-50px" }}
         whileInView={{ opacity: 1, x: "0px" }}
-        transition={{ duration: 0.75 }}
+        transition={{ duration: 2 }}
       >
         <h2 className={stl.besteMerken}>Topmerken, vakkundig gelegd </h2>
         <IoCheckmarkDone className={stl.checkmark} />

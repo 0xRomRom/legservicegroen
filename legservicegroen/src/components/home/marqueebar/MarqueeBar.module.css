@@ -60,7 +60,7 @@
 
 .besteMerken {
   font-size: 48px;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   margin-left: 2rem;
 }
 
@@ -74,4 +74,5 @@
   font-size: 3rem;
   margin-left: 0.75rem;
   color: rgb(103, 202, 207);
+  margin-bottom: 1rem;
 }

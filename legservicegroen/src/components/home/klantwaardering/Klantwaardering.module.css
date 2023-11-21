@@ -7,6 +7,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .heroTitle {
@@ -15,7 +16,43 @@
 }
 
 .rating {
-  margin-top: 3rem;
+  margin-top: 2rem;
   color: white;
   font-size: 48px;
+}
+
+.reviewRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  position: absolute;
+  width: 100%;
+  bottom: 2.5rem;
+}
+
+.btnwrap {
+  padding-right: 3rem;
+  color: rgb(199, 197, 197);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.ziereviews {
+  transition: all 0.3s ease-in-out;
+}
+
+.arrow {
+  transition: all 0.3s ease-in-out;
+}
+
+.btnwrap:hover .arrow {
+  transform: translateX(0.35rem) !important;
+  color: white;
+}
+
+.btnwrap:hover .ziereviews {
+  color: white;
 }
