@@ -6,16 +6,27 @@ import Portfolio from "./components/portfolio/Portfolio";
 import Footer from "./components/footer/Footer";
 import { AnimatePresence } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import PortfolioOverlay from "./components/home/portfoliooverlay/PortfolioOverlay";
+import { useState } from "react";
 
 function App() {
   const location = useLocation();
+  const [floorChoice, setFloorChoice] = useState("");
   console.log(location);
   return (
     <div className="App">
+      {floorChoice !== "" && (
+        <PortfolioOverlay setFloorChoice={setFloorChoice} />
+      )}
       <Navbar />
       <AnimatePresence>
         <Routes location={location}>
-          <Route index path="/" element={<Home />} key={location.pathname} />
+          <Route
+            index
+            path="/"
+            element={<Home setFloorChoice={setFloorChoice} />}
+            key={location.pathname}
+          />
 
           <Route
             path="/portfolio"

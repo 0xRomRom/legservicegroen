@@ -2,7 +2,7 @@ import stl from "./PortfolioSection.module.css";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
-const Portfolio = () => {
+const Portfolio = ({ setFloorChoice }) => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -11,10 +11,20 @@ const Portfolio = () => {
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["-100%", "700%"]);
   const block = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
+
+  const handleModalOpen = (floorType) => {
+    setFloorChoice(floorType);
+  };
+
   return (
     <div className={stl.portfolio} ref={ref}>
       <m.h2 style={{ y: textY }}>Portfolio</m.h2>
-      <div className={stl.modalBox}>
+      <div
+        className={stl.modalBox}
+        onClick={() => {
+          handleModalOpen("bijkeuken");
+        }}
+      >
         <div className={stl.modalItem}>
           <h2 className={stl.modalTitle}>Bijkeuken</h2>
           <img src={"/Floor1.jpg"} alt="Floor" className={stl.modalImg} />

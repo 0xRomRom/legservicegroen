@@ -8,7 +8,7 @@ import CtaBox from "./ctabox/CtaBox";
 
 import { motion as m } from "framer-motion";
 
-const Home = () => {
+const Home = ({ setFloorChoice }) => {
   return (
     <m.div
       className={stl.home}
@@ -22,7 +22,7 @@ const Home = () => {
     >
       <Header />
       <Diensten />
-      <Portfolio />
+      <Portfolio setFloorChoice={setFloorChoice} />
       <MarqueeBar />
       <Klantwaardering />
       <CtaBox />
