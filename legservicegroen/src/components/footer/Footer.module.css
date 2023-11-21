@@ -33,6 +33,7 @@ a {
   height: 100%;
   display: flex;
   justify-content: center;
+  gap: 2.5rem;
 }
 
 .leftBlock {
@@ -45,6 +46,27 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  border: 1px solid white;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  user-select: none;
+}
+
+.rightBlock {
+  position: relative;
+  width: 25rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border: 1px solid white;
+  border-right: 1px solid transparent;
+  border-left: 1px solid transparent;
+  color: white;
+  padding-left: 2rem;
+  gap: 1rem;
+  user-select: none;
 }
 
 .footerMainlogo {
@@ -80,10 +102,12 @@ a {
   left: -4px;
 }
 
-.rightBlock {
+.middleBlock {
   width: 30rem;
   height: 100%;
   border: 1px solid white;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -91,13 +115,22 @@ a {
 }
 
 .footerList {
+  /* margin-top: 4rem; */
   list-style-type: none;
+  padding-bottom: 2rem;
 }
 
 .footerList li {
-  color: white;
+  color: rgb(189, 189, 189);
   font-size: 20px;
-  margin-top: 5px;
+  margin-top: 10px;
+  cursor: pointer;
+  display: flex;
+  transition: all 0.2s ease-in-out;
+}
+
+.footerList li:hover {
+  color: white;
 }
 
 .socialsBar {
@@ -112,6 +145,35 @@ a {
 }
 
 .socialIcon {
-  color: white;
+  color: rgb(211, 211, 211);
   font-size: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.socialIcon:hover {
+  color: white;
+}
+
+.rightSpan {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.7rem;
+  color: rgb(189, 189, 189);
+}
+
+.footerList li:hover .selectArrow {
+  visibility: visible;
+}
+
+.selectArrow {
+  position: relative;
+  visibility: hidden;
+  top: 4px;
+}
+
+.rightBlockIcon {
+  color: white;
 }

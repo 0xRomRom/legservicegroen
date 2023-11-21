@@ -2,6 +2,13 @@ import stl from "./Footer.module.css";
 import blanklogo from "../../assets/Blanklogo.png";
 import { LuInstagram } from "react-icons/lu";
 import { BsTwitterX } from "react-icons/bs";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa6";
+import { LuHardHat } from "react-icons/lu";
+import { FaRulerCombined } from "react-icons/fa6";
+import { FaMagnifyingGlassDollar } from "react-icons/fa6";
+import { FaPenNib } from "react-icons/fa";
+import { IoIosArrowForward } from "react-icons/io";
 
 const Footer = () => {
   return (
@@ -20,19 +27,54 @@ const Footer = () => {
               <div className={stl.blackshape}></div>
             </div>
           </div>
-          <div className={stl.rightBlock}>
+          <div className={stl.middleBlock}>
             <ul className={stl.footerList}>
-              <li>Portfolio</li>
-              <li>Specialiteiten</li>
-              <li>Projecten</li>
-              <li>Prijsopgave</li>
-              <li>Reviews</li>
-              <li>Contact</li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Portfolio
+              </li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Specialiteiten
+              </li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Projecten
+              </li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Prijsopgave
+              </li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Reviews
+              </li>
+              <li>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Contact
+              </li>
             </ul>
             <div className={stl.socialsBar}>
               <LuInstagram className={stl.socialIcon} />
               <BsTwitterX className={stl.socialIcon} />
+              <IoLogoLinkedin className={stl.socialIcon} />
+              <FaFacebook className={stl.socialIcon} />
             </div>
+          </div>
+          <div className={stl.rightBlock}>
+            <span className={stl.rightSpan}>
+              <FaRulerCombined className={stl.rightBlockIcon} /> Secuur
+            </span>
+            <span className={stl.rightSpan}>
+              <LuHardHat className={stl.rightBlockIcon} /> Vakkundig
+            </span>
+            <span className={stl.rightSpan}>
+              <FaMagnifyingGlassDollar className={stl.rightBlockIcon} />{" "}
+              Transparant
+            </span>
+            <span className={stl.rightSpan}>
+              <FaPenNib className={stl.rightBlockIcon} /> Persoonlijk
+            </span>
           </div>
         </div>
         <span className={stl.designedBy}>
