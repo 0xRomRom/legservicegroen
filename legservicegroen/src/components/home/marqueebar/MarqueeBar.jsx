@@ -1,4 +1,5 @@
 import stl from "./MarqueeBar.module.css";
+import { IoCheckmarkDone } from "react-icons/io5";
 import img1 from "../../../assets/marquee/1.webp";
 import img2 from "../../../assets/marquee/2.webp";
 import img3 from "../../../assets/marquee/3.webp";
@@ -20,9 +21,20 @@ import img18 from "../../../assets/marquee/18.webp";
 import img19 from "../../../assets/marquee/19.webp";
 import img20 from "../../../assets/marquee/20.webp";
 
+import { motion as m } from "framer-motion";
+
 const MarqueeBar = () => {
   return (
     <div className={stl.marqueeBar}>
+      <m.div
+        className={stl.heroRow}
+        initial={{ opacity: 0, x: "-50px" }}
+        whileInView={{ opacity: 1, x: "0px" }}
+        transition={{ duration: 0.75 }}
+      >
+        <h2 className={stl.besteMerken}>Topmerken, vakkundig gelegd </h2>
+        <IoCheckmarkDone className={stl.checkmark} />
+      </m.div>
       <div className={stl.marqueeWrap}>
         <div className={stl.marqueeRow}>
           <div className={stl.marqueeItem}>

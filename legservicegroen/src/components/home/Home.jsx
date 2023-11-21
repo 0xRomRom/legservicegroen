@@ -10,7 +10,7 @@ const Home = () => {
   return (
     <m.div
       className={stl.home}
-      initial={{ y: "100%" }}
+      initial={{ y: "-10%" }}
       animate={{ y: "0%" }}
       transition={{
         duration: 0.75,
