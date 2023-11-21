@@ -1,0 +1,21 @@
+.Klantwaardering {
+  margin-top: 15rem;
+  height: 50rem;
+  margin-bottom: 10rem;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.heroTitle {
+  color: white;
+  font-size: 48px;
+}
+
+.rating {
+  margin-top: 3rem;
+  color: white;
+  font-size: 48px;
+}

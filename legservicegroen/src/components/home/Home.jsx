@@ -3,6 +3,7 @@ import Header from "./header/Header";
 import Diensten from "./diensten/Diensten";
 import Portfolio from "./portfolio/PortfolioSection";
 import MarqueeBar from "./marqueebar/MarqueeBar";
+import Klantwaardering from "./klantwaardering/Klantwaardering";
 
 import { motion as m } from "framer-motion";
 
@@ -22,6 +23,7 @@ const Home = () => {
       <Diensten />
       <Portfolio />
       <MarqueeBar />
+      <Klantwaardering />
     </m.div>
   );
 };
