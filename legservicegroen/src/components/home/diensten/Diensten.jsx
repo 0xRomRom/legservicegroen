@@ -43,7 +43,7 @@ const Diensten = () => {
         </m.div>
         <m.div
           className={stl.gridModal2}
-          initial={{ opacity: 0, y: "-40px" }}
+          initial={{ opacity: 0, y: "-60px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           transition={{ duration: 0.85 }}
         >
@@ -60,7 +60,7 @@ const Diensten = () => {
         </m.div>
         <m.div
           className={stl.gridModal3}
-          initial={{ opacity: 0, y: "-50px" }}
+          initial={{ opacity: 0, y: "-70px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           transition={{ duration: 0.95 }}
         >
@@ -76,7 +76,7 @@ const Diensten = () => {
         </m.div>
         <m.div
           className={stl.gridModal4}
-          initial={{ opacity: 0, y: "-60px" }}
+          initial={{ opacity: 0, y: "-80px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           transition={{ duration: 1.05 }}
         >
@@ -92,9 +92,9 @@ const Diensten = () => {
         </m.div>
         <m.div
           className={stl.gridModal5}
-          initial={{ opacity: 0, y: "-70px" }}
+          initial={{ opacity: 0, y: "-90px" }}
           whileInView={{ opacity: 1, y: "0px" }}
-          transition={{ duration: 1.25 }}
+          transition={{ duration: 1.15 }}
         >
           <h3 className={stl.meer}>Meer</h3>
           <FaArrowRight className={stl.arrowRight} />

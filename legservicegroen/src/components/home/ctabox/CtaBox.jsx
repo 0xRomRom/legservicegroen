@@ -4,7 +4,7 @@ const CtaBox = () => {
   return (
     <div className={stl.ctaBox}>
       <div className={`${stl.curvedDiv} ${stl.upper}`}>
-        <p>
+        <p className={stl.fillerspan}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. In orci
           lorem, porttitor nec vulputate sit amet, fermentum a purus. Curabitur
           ullamcorper tellus orci, vel mattis sapien pretium eget. Sed iaculis
@@ -23,17 +23,13 @@ const CtaBox = () => {
         </svg>
       </div>
       <div className={stl.curvedDiv}>
-        <h1 className={stl.heroTitle}>Hello World</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. In orci
-          lorem, porttitor nec vulputate sit amet, fermentum a purus. Curabitur
-          ullamcorper tellus orci, vel mattis sapien pretium eget. Sed iaculis
-          sit amet elit non molestie. Vestibulum sit amet massa nunc. Donec ante
-          tortor, molestie in augue vitae, vestibulum posuere est. Phasellus sed
-          maximus purus. Praesent justo massa, porta sit amet lacinia non,
-          tincidunt vitae nunc. Praesent sagittis elit at lacus condimentum
-          ullamcorper. Mauris eu leo nec dolor molestie fermentum.
-        </p>
+        <h1 className={stl.heroTitle}>Ik ben op zoek naar</h1>
+        <div className={stl.ctaOptions}>
+          <button>Inspiratie</button>
+          <button>Hello</button>
+          <button>Prijzen</button>
+          <button>Persoonlijk contact</button>
+        </div>
         <svg viewBox="0 0 1440 319">
           <path
             fill="#fff"
