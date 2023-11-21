@@ -1,6 +1,8 @@
 import stl from "./Home.module.css";
 import Header from "./header/Header";
 import Diensten from "./diensten/Diensten";
+import Portfolio from "./portfolio/PortfolioSection";
+
 import { motion as m } from "framer-motion";
 
 const Home = () => {
@@ -17,6 +19,8 @@ const Home = () => {
     >
       <Header />
       <Diensten />
+      <Portfolio />
+      <Header />
     </m.div>
   );
 };

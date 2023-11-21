@@ -1,0 +1,26 @@
+.portfolio {
+  margin: 15rem 0rem;
+  height: 40rem;
+  background-position: center;
+  background-size: cover;
+  /* background-image: url("../../../assets/Floor3.jpg"); */
+  background-attachment: fixed;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio h2 {
+  position: relative;
+  z-index: 2;
+  color: black;
+}
+
+.bgbox {
+  position: absolute;
+  inset: 0;
+  height: 100%;
+}
