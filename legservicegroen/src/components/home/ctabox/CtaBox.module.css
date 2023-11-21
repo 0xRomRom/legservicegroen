@@ -32,16 +32,43 @@
 }
 
 .heroTitle {
-  font-size: 48px !important;
+  font-size: 64px !important;
 }
 
 .ctaOptions {
   height: 10rem;
   width: 100%;
-  background-color: red;
+  /* background-color: red; */
+  gap: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.ctaOptions button {
-  width: 8rem;
-  height: 2rem;
+.ctaBtn {
+  padding: 1rem 2rem;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.ctaBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.ctaBtn:hover .ctaIcon {
+  /* transform: translateX(0.5rem); */
+}
+
+.ctaIcon {
+  font-size: 27px;
 }

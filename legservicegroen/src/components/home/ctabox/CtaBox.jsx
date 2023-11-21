@@ -1,4 +1,9 @@
 import stl from "./CtaBox.module.css";
+import { FaPaintBrush } from "react-icons/fa";
+import { MdOutlineReviews } from "react-icons/md";
+import { RiMoneyEuroBoxFill } from "react-icons/ri";
+import { BsPeopleFill } from "react-icons/bs";
+import { motion as m } from "framer-motion";
 
 const CtaBox = () => {
   return (
@@ -23,12 +28,22 @@ const CtaBox = () => {
         </svg>
       </div>
       <div className={stl.curvedDiv}>
-        <h1 className={stl.heroTitle}>Ik ben op zoek naar</h1>
+        <m.h1 className={stl.heroTitle} initial={{ opacity: 0 }}>
+          Ik ben op zoek naar
+        </m.h1>
         <div className={stl.ctaOptions}>
-          <button>Inspiratie</button>
-          <button>Hello</button>
-          <button>Prijzen</button>
-          <button>Persoonlijk contact</button>
+          <button className={stl.ctaBtn}>
+            Inspiratie <FaPaintBrush className={stl.ctaIcon} />
+          </button>
+          <button className={stl.ctaBtn}>
+            Recensies <MdOutlineReviews className={stl.ctaIcon} />
+          </button>
+          <button className={stl.ctaBtn}>
+            Tarieven <RiMoneyEuroBoxFill className={stl.ctaIcon} />
+          </button>
+          <button className={stl.ctaBtn}>
+            Persoonlijk contact <BsPeopleFill className={stl.ctaIcon} />
+          </button>
         </div>
         <svg viewBox="0 0 1440 319">
           <path
