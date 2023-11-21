@@ -28,22 +28,47 @@ const CtaBox = () => {
         </svg>
       </div>
       <div className={stl.curvedDiv}>
-        <m.h1 className={stl.heroTitle} initial={{ opacity: 0 }}>
+        <m.h1
+          className={stl.heroTitle}
+          initial={{ opacity: 0, y: "-20px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 1 }}
+        >
           Ik ben op zoek naar
         </m.h1>
         <div className={stl.ctaOptions}>
-          <button className={stl.ctaBtn}>
+          <m.button
+            className={stl.ctaBtn}
+            initial={{ opacity: 0, y: "30px" }}
+            whileInView={{ opacity: 1, y: "0px" }}
+            transition={{ duration: 0.3, ease: "easeIn" }}
+          >
             Inspiratie <FaPaintBrush className={stl.ctaIcon} />
-          </button>
-          <button className={stl.ctaBtn}>
+          </m.button>
+          <m.button
+            className={stl.ctaBtn}
+            initial={{ opacity: 0, y: "30px" }}
+            whileInView={{ opacity: 1, y: "0px" }}
+            transition={{ duration: 0.35, ease: "easeIn" }}
+          >
             Recensies <MdOutlineReviews className={stl.ctaIcon} />
-          </button>
-          <button className={stl.ctaBtn}>
+          </m.button>
+          <m.button
+            className={stl.ctaBtn}
+            initial={{ opacity: 0, y: "30px" }}
+            whileInView={{ opacity: 1, y: "0px" }}
+            transition={{ duration: 0.4, ease: "easeIn" }}
+          >
             Tarieven <RiMoneyEuroBoxFill className={stl.ctaIcon} />
-          </button>
-          <button className={stl.ctaBtn}>
+          </m.button>
+          <m.button
+            className={stl.ctaBtn}
+            initial={{ opacity: 0, y: "30px" }}
+            whileInView={{ opacity: 1, y: "0px" }}
+            transition={{ duration: 0.45, ease: "easeIn" }}
+          >
             Persoonlijk contact <BsPeopleFill className={stl.ctaIcon} />
-          </button>
+          </m.button>
         </div>
         <svg viewBox="0 0 1440 319">
           <path

@@ -4,10 +4,10 @@
   margin-bottom: 10rem;
   background-color: black;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: row-reverse;
 }
 
 .heroTitle {
@@ -55,4 +55,17 @@
 
 .btnwrap:hover .ziereviews {
   color: white;
+}
+
+.lottieAnimation {
+  width: 20rem;
+  position: absolute;
+  left: 8rem;
+}
+
+.ratingWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }

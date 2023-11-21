@@ -26,6 +26,7 @@
   position: relative;
   font-size: 100px;
   font-weight: 900;
+  line-height: 110px;
 }
 .leftblock h2 {
   font-size: 80px;
@@ -71,6 +72,8 @@
 .blanklogo {
   width: 80px;
   margin-right: 1rem;
+  top: 0.4rem;
+  position: relative;
 }
 
 .floortype {
