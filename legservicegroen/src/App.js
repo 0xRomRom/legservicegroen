@@ -12,11 +12,13 @@ import { useState } from "react";
 function App() {
   const location = useLocation();
   const [floorChoice, setFloorChoice] = useState("");
-  console.log(location);
   return (
     <div className="App">
       {floorChoice !== "" && (
-        <PortfolioOverlay setFloorChoice={setFloorChoice} />
+        <PortfolioOverlay
+          setFloorChoice={setFloorChoice}
+          floorChoice={floorChoice}
+        />
       )}
       <Navbar />
       <AnimatePresence>

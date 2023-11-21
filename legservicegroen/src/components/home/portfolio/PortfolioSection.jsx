@@ -19,25 +19,40 @@ const Portfolio = ({ setFloorChoice }) => {
   return (
     <div className={stl.portfolio} ref={ref}>
       <m.h2 style={{ y: textY }}>Portfolio</m.h2>
-      <div
-        className={stl.modalBox}
-        onClick={() => {
-          handleModalOpen("bijkeuken");
-        }}
-      >
-        <div className={stl.modalItem}>
+      <div className={stl.modalBox}>
+        <div
+          className={stl.modalItem}
+          onClick={() => {
+            handleModalOpen("box1");
+          }}
+        >
           <h2 className={stl.modalTitle}>Bijkeuken</h2>
           <img src={"/Floor1.jpg"} alt="Floor" className={stl.modalImg} />
         </div>
-        <div className={stl.modalItem}>
+        <div
+          className={stl.modalItem}
+          onClick={() => {
+            handleModalOpen("box2");
+          }}
+        >
           <h2 className={stl.modalTitle}>Slaapkamer</h2>
           <img src={"/Floor2.jpg"} alt="Floor" className={stl.modalImg} />
         </div>
-        <div className={stl.modalItem}>
+        <div
+          className={stl.modalItem}
+          onClick={() => {
+            handleModalOpen("box3");
+          }}
+        >
           <h2 className={stl.modalTitle}>Woonkamer</h2>
           <img src={"/Floor3.jpg"} alt="Floor" className={stl.modalImg} />
         </div>
-        <div className={stl.modalItem}>
+        <div
+          className={stl.modalItem}
+          onClick={() => {
+            handleModalOpen("box4");
+          }}
+        >
           <h2 className={stl.modalTitle}>Kinderkamer</h2>
           <img src={"/Floor4.jpg"} alt="Floor" className={stl.modalImg} />
         </div>

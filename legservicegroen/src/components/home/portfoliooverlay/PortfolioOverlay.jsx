@@ -1,11 +1,16 @@
 import stl from "./PortfolioOverlay.module.css";
 import Floor1 from "../../../assets/Floor1.jpg";
 import { CgClose } from "react-icons/cg";
+import { useEffect } from "react";
 
-const PortfolioOverlay = ({ setFloorChoice }) => {
+const PortfolioOverlay = ({ setFloorChoice, floorChoice }) => {
   const handleModalClose = () => {
     setFloorChoice("");
   };
+
+  useEffect(() => {
+    console.log(floorChoice);
+  }, [floorChoice]);
 
   return (
     <div className={stl.overlay}>
@@ -15,11 +20,11 @@ const PortfolioOverlay = ({ setFloorChoice }) => {
             <CgClose className={stl.close} onClick={handleModalClose} />
           </div>
           <img src={Floor1} alt="Floor" className={stl.floorImg} />
-          <h2 className={stl.floorTitle}>PVC</h2>
+          <h2 className={stl.floorTitle}>Bijkeuken</h2>
         </div>
         <div>
           <p className={stl.story}>
-            Bob, de eigenaar van Legservice Groen, coördineerde de installatie
+            Davey, de eigenaar van Legservice Groen, coördineerde de installatie
             en communiceerde duidelijk met de familie over het proces. Het team
             begon met het verplaatsen van meubels en het voorbereiden van de
             ruimte voor de vloerinstallatie. De installatie zelf verliep vlot,
