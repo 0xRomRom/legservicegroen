@@ -1,20 +1,36 @@
 import stl from "./Diensten.module.css";
 import { FaArrowRight } from "react-icons/fa";
+import { motion as m } from "framer-motion";
 
 const Diensten = () => {
   return (
     <div className={stl.diensten}>
-      <div className={stl.topFlex}>
+      <m.div
+        className={stl.topFlex}
+        initial={{ opacity: 0, x: "-30px" }}
+        whileInView={{ opacity: 1, x: "0px" }}
+        transition={{ duration: 0.75 }}
+      >
         <h2 className={stl.heroTitle}>Uw vloerspecialist</h2>
         <div className={stl.blackshape}></div>
-      </div>
-      <p className={stl.copy}>
+      </m.div>
+      <m.p
+        className={stl.copy}
+        initial={{ opacity: 0, x: "-30px" }}
+        whileInView={{ opacity: 1, x: "0px" }}
+        transition={{ duration: 0.85 }}
+      >
         Wij denken graag met u mee over een passende oplossing. Door onze jaren
         aan ervaring kunnen wij een breed scala aan parketten voorzien naar uw
         behoefte.
-      </p>
+      </m.p>
       <div className={stl.specialGrid}>
-        <div className={stl.gridModal1}>
+        <m.div
+          className={stl.gridModal1}
+          initial={{ opacity: 0, y: "-30px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 0.75 }}
+        >
           <div className={stl.innerContainer}>
             <h3>PVC</h3>
             <p className={stl.modalCopy}>
@@ -24,8 +40,13 @@ const Diensten = () => {
               functionele vloerbedekking.
             </p>
           </div>
-        </div>
-        <div className={stl.gridModal2}>
+        </m.div>
+        <m.div
+          className={stl.gridModal2}
+          initial={{ opacity: 0, y: "-40px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 0.85 }}
+        >
           <div className={stl.innerContainer}>
             <h3>Visgraat</h3>
             <p className={stl.modalCopy}>
@@ -36,8 +57,13 @@ const Diensten = () => {
               het patroon.
             </p>
           </div>
-        </div>
-        <div className={stl.gridModal3}>
+        </m.div>
+        <m.div
+          className={stl.gridModal3}
+          initial={{ opacity: 0, y: "-50px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 0.95 }}
+        >
           <div className={stl.innerContainer}>
             <h3>Eik</h3>
             <p className={stl.modalCopy}>
@@ -47,8 +73,13 @@ const Diensten = () => {
               vleugje elegantie toe aan elke ruimte.
             </p>
           </div>
-        </div>
-        <div className={stl.gridModal4}>
+        </m.div>
+        <m.div
+          className={stl.gridModal4}
+          initial={{ opacity: 0, y: "-60px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 1.05 }}
+        >
           <div className={stl.innerContainer}>
             <h3>Egaliseren</h3>
             <p className={stl.modalCopy}>
@@ -58,11 +89,16 @@ const Diensten = () => {
               de vloer wordt vergroot.
             </p>
           </div>
-        </div>
-        <div className={stl.gridModal5}>
+        </m.div>
+        <m.div
+          className={stl.gridModal5}
+          initial={{ opacity: 0, y: "-70px" }}
+          whileInView={{ opacity: 1, y: "0px" }}
+          transition={{ duration: 1.25 }}
+        >
           <h3 className={stl.meer}>Meer</h3>
           <FaArrowRight className={stl.arrowRight} />
-        </div>
+        </m.div>
       </div>
     </div>
   );

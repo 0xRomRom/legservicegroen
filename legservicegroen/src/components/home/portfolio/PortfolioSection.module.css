@@ -1,6 +1,6 @@
 .portfolio {
   margin: 15rem 0rem;
-  height: 40rem;
+  height: 45rem;
   background-position: center;
   background-size: cover;
   /* background-image: url("../../../assets/Floor3.jpg"); */
@@ -10,17 +10,126 @@
   justify-content: center;
   align-items: center;
   position: relative;
+  flex-direction: column;
   overflow: hidden;
+}
+
+.portfolio:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top: 80px solid white;
+  border-left: 80px solid rgb(103, 202, 207);
+  width: 0;
+
+  z-index: 100;
 }
 
 .portfolio h2 {
   position: relative;
   z-index: 2;
-  color: black;
+  color: white;
+  font-size: 48px;
 }
 
 .bgbox {
   position: absolute;
   inset: 0;
   height: 100%;
+}
+
+.modalBox {
+  /* border: 1px solid red; */
+  height: 20rem;
+  width: 200%;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  /* background-color: red; */
+}
+
+.modalItem {
+  height: 100%;
+  width: 19rem;
+  background-color: rgba(0, 0, 0, 0.712);
+  border-radius: 0.4rem;
+  padding: 0.25rem;
+  transform: scale(0.9);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modalItem:hover {
+  transform: scale(1);
+}
+
+.modalItem:hover img {
+  opacity: 0.5;
+}
+
+.modalItem:hover .modalTitle {
+  opacity: 1;
+}
+
+.modalImg {
+  width: 100%;
+  border-top-left-radius: 0.2rem;
+  border-top-right-radius: 0.2rem;
+  height: 100%;
+  top: 0;
+  object-fit: cover;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.modalTitle {
+  position: absolute !important;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  font-size: 24px !important;
+  margin-top: 8rem;
+}
+.modalTitleMeer {
+  position: relative !important;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  font-size: 24px !important;
+}
+
+.modalItemMeer {
+  height: 10rem;
+  width: 10rem;
+  background-color: rgba(0, 0, 0, 0.712);
+  border-radius: 0.4rem;
+  padding: 0.25rem;
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-top-right-radius: 100%;
+}
+
+.modalItemMeer:hover {
+  transform: scale(0.9);
+  border-top-right-radius: 0%;
+}
+
+.modalItemMeer:hover img {
+  opacity: 0.5;
+}
+
+.modalItemMeer:hover .modalTitleMeer {
+  opacity: 1;
 }
