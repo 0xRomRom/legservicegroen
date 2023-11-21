@@ -2,6 +2,7 @@ import stl from "./Home.module.css";
 import Header from "./header/Header";
 import Diensten from "./diensten/Diensten";
 import Portfolio from "./portfolio/PortfolioSection";
+import MarqueeBar from "./marqueebar/MarqueeBar";
 
 import { motion as m } from "framer-motion";
 
@@ -20,7 +21,7 @@ const Home = () => {
       <Header />
       <Diensten />
       <Portfolio />
-      <Header />
+      <MarqueeBar />
     </m.div>
   );
 };

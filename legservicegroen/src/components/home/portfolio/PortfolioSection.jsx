@@ -10,7 +10,7 @@ const Portfolio = () => {
   });
   const backgroundY = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
   const textY = useTransform(scrollYProgress, [0, 1], ["-100%", "700%"]);
-  const block = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
+  const block = useTransform(scrollYProgress, [0, 1], ["0%", "150%"]);
   return (
     <div className={stl.portfolio} ref={ref}>
       <m.h2 style={{ y: textY }}>Portfolio</m.h2>
