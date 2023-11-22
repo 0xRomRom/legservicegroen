@@ -4,8 +4,14 @@ import { MdOutlineReviews } from "react-icons/md";
 import { RiMoneyEuroBoxFill } from "react-icons/ri";
 import { BsPeopleFill } from "react-icons/bs";
 import { motion as m } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const CtaBox = () => {
+  const navigate = useNavigate();
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <div className={stl.ctaBox}>
       <div className={`${stl.curvedDiv} ${stl.upper}`}>
@@ -42,6 +48,7 @@ const CtaBox = () => {
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: "0px" }}
             transition={{ duration: 0.3, ease: "easeIn" }}
+            onClick={() => handleNavigation("/portfolio")}
           >
             Inspiratie <FaPaintBrush className={stl.ctaIcon} />
           </m.button>
@@ -50,6 +57,7 @@ const CtaBox = () => {
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: "0px" }}
             transition={{ duration: 0.35, ease: "easeIn" }}
+            onClick={() => handleNavigation("/reviews")}
           >
             Recensies <MdOutlineReviews className={stl.ctaIcon} />
           </m.button>
@@ -58,6 +66,7 @@ const CtaBox = () => {
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: "0px" }}
             transition={{ duration: 0.4, ease: "easeIn" }}
+            onClick={() => handleNavigation("/prijsopgave")}
           >
             Tarieven <RiMoneyEuroBoxFill className={stl.ctaIcon} />
           </m.button>
@@ -66,6 +75,7 @@ const CtaBox = () => {
             initial={{ opacity: 0, y: "30px" }}
             whileInView={{ opacity: 1, y: "0px" }}
             transition={{ duration: 0.45, ease: "easeIn" }}
+            onClick={() => handleNavigation("/contact")}
           >
             Persoonlijk contact <BsPeopleFill className={stl.ctaIcon} />
           </m.button>

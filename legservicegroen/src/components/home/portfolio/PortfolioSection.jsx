@@ -1,8 +1,10 @@
 import stl from "./PortfolioSection.module.css";
 import { motion as m, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Portfolio = ({ setFloorChoice }) => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -14,6 +16,10 @@ const Portfolio = ({ setFloorChoice }) => {
 
   const handleModalOpen = (floorType) => {
     setFloorChoice(floorType);
+  };
+
+  const handleNavigation = () => {
+    navigate("/portfolio");
   };
 
   return (
@@ -56,7 +62,11 @@ const Portfolio = ({ setFloorChoice }) => {
           <h2 className={stl.modalTitle}>Kinderkamer</h2>
           <img src={"/Floor4.jpg"} alt="Floor" className={stl.modalImg} />
         </div>
-        <m.div className={stl.modalItemMeer} style={{ y: block }}>
+        <m.div
+          className={stl.modalItemMeer}
+          style={{ y: block }}
+          onClick={handleNavigation}
+        >
           <h2 className={stl.modalTitleMeer}>Meer</h2>
         </m.div>
       </div>

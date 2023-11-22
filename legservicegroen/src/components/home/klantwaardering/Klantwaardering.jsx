@@ -5,11 +5,16 @@ import { motion as m } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import Lottie from "lottie-react";
 import animationRating from "../../../assets/ratinganimation.json";
+import { useNavigate } from "react-router-dom";
 
 const Klantwaardering = () => {
+  const navigate = useNavigate();
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
+  const handleNavigation = () => {
+    navigate("/reviews");
+  };
 
   return (
     <div className={stl.Klantwaardering}>
@@ -35,7 +40,7 @@ const Klantwaardering = () => {
       </div>
       <Lottie animationData={animationRating} className={stl.lottieAnimation} />
       <div className={stl.reviewRow}>
-        <div className={stl.btnwrap}>
+        <div className={stl.btnwrap} onClick={handleNavigation}>
           <span className={stl.ziereviews}>Zie reviews</span>
           <FaArrowRight className={stl.arrow} />
         </div>

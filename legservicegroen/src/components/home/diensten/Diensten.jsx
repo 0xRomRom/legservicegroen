@@ -1,8 +1,15 @@
 import stl from "./Diensten.module.css";
 import { FaArrowRight } from "react-icons/fa";
 import { motion as m } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 
 const Diensten = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = () => {
+    navigate("/specialiteiten");
+  };
+
   return (
     <div className={stl.diensten}>
       <m.div
@@ -95,6 +102,7 @@ const Diensten = () => {
           initial={{ opacity: 0, y: "-90px" }}
           whileInView={{ opacity: 1, y: "0px" }}
           transition={{ duration: 1.15 }}
+          onClick={handleNavigation}
         >
           <h3 className={stl.meer}>Meer</h3>
           <FaArrowRight className={stl.arrowRight} />

@@ -9,8 +9,15 @@ import { FaRulerCombined } from "react-icons/fa6";
 import { FaMagnifyingGlassDollar } from "react-icons/fa6";
 import { FaPenNib } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
+  const navigate = useNavigate();
+
+  const handleNavigation = (path) => {
+    navigate(path);
+  };
+
   return (
     <>
       <div className={stl.footer}>
@@ -29,27 +36,27 @@ const Footer = () => {
           </div>
           <div className={stl.middleBlock}>
             <ul className={stl.footerList}>
-              <li>
+              <li onClick={() => handleNavigation("/portfolio")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Portfolio
               </li>
-              <li>
+              <li onClick={() => handleNavigation("/specialiteiten")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Specialiteiten
               </li>
-              <li>
+              <li onClick={() => handleNavigation("/projecten")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Projecten
               </li>
-              <li>
+              <li onClick={() => handleNavigation("/prijsopgave")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Prijsopgave
               </li>
-              <li>
+              <li onClick={() => handleNavigation("/reviews")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Reviews
               </li>
-              <li>
+              <li onClick={() => handleNavigation("/contact")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Contact
               </li>

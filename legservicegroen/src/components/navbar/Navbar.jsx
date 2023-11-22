@@ -2,17 +2,28 @@ import stl from "./Navbar.module.css";
 import logo from "../../assets/Logo.png";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
   const [activePage, setActivePage] = useState("home");
 
   const tabSwitcher = (newTab) => {
     setActivePage(newTab);
   };
 
+  const handleNavigation = () => {
+    navigate("/");
+  };
+
   return (
     <nav className={stl.navbar}>
-      <img src={logo} alt="Legservice groen" className={stl.navlogo} />
+      <img
+        src={logo}
+        alt="Legservice groen"
+        className={stl.navlogo}
+        onClick={handleNavigation}
+      />
       <ul className={stl.navlist}>
         <Link to="/" className={stl.links} onClick={() => tabSwitcher("home")}>
           <li
