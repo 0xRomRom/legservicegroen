@@ -14,12 +14,15 @@ function App() {
   const [floorChoice, setFloorChoice] = useState("");
   return (
     <div className="App">
-      {floorChoice !== "" && (
-        <PortfolioOverlay
-          setFloorChoice={setFloorChoice}
-          floorChoice={floorChoice}
-        />
-      )}
+      <AnimatePresence>
+        {floorChoice !== "" && (
+          <PortfolioOverlay
+            setFloorChoice={setFloorChoice}
+            floorChoice={floorChoice}
+          />
+        )}
+      </AnimatePresence>
+
       <Navbar />
       <AnimatePresence>
         <Routes location={location}>
