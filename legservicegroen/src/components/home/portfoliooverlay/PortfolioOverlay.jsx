@@ -1,43 +1,62 @@
 import stl from "./PortfolioOverlay.module.css";
-import Floor1 from "../../../assets/Floor1.jpg";
 import { CgClose } from "react-icons/cg";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { motion as m } from "framer-motion";
+import portfolioObject from "../../utils/portfolioObject";
 
 const PortfolioOverlay = ({ setFloorChoice, floorChoice }) => {
+  const [currentModal, setCurrentModal] = useState(null);
+
   const handleModalClose = () => {
     setFloorChoice("");
+    setCurrentModal(null);
   };
 
   useEffect(() => {
-    console.log(floorChoice);
+    if (floorChoice === "box1") {
+      const obj = portfolioObject[0];
+      setCurrentModal(obj);
+    }
+    if (floorChoice === "box2") {
+      const obj = portfolioObject[1];
+      setCurrentModal(obj);
+    }
+    if (floorChoice === "box3") {
+      const obj = portfolioObject[2];
+      setCurrentModal(obj);
+    }
+    if (floorChoice === "box4") {
+      const obj = portfolioObject[3];
+      setCurrentModal(obj);
+    }
   }, [floorChoice]);
 
   return (
-    <div className={stl.overlay}>
-      <div className={stl.innerWrap}>
+    <div className={stl.overlay} key={Math.random()}>
+      <m.div
+        className={stl.innerWrap}
+        exit={{ opacity: 0 }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+      >
         <div className={stl.topDiv}>
           <div className={stl.closeWrap}>
             <CgClose className={stl.close} onClick={handleModalClose} />
           </div>
-          <img src={Floor1} alt="Floor" className={stl.floorImg} />
-          <h2 className={stl.floorTitle}>Bijkeuken</h2>
+          <img
+            src={currentModal ? currentModal.imgSrc : ""}
+            alt="Floor"
+            className={stl.floorImg}
+          />
+          <h2 className={stl.floorTitle}>
+            {currentModal ? currentModal.title : ""}
+          </h2>
         </div>
         <div>
-          <p className={stl.story}>
-            Davey, de eigenaar van Legservice Groen, coördineerde de installatie
-            en communiceerde duidelijk met de familie over het proces. Het team
-            begon met het verplaatsen van meubels en het voorbereiden van de
-            ruimte voor de vloerinstallatie. De installatie zelf verliep vlot,
-            met de focus op nauwkeurigheid en vakmanschap.
-            <br />
-            <br /> Tijdens de installatie werden eventuele vragen van de familie
-            De Boer snel beantwoord, en het team zorgde ervoor dat ze op de
-            hoogte bleven van de voortgang. Er werd extra aandacht besteed aan
-            de afwerking, met oog voor detail om een hoogwaardig eindresultaat
-            te garanderen.
-          </p>
+          <p className={stl.story}>{currentModal ? currentModal.copy : ""}</p>
         </div>
-      </div>
+      </m.div>
     </div>
   );
 };

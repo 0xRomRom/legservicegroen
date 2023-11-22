@@ -22,6 +22,7 @@
 }
 .floorImg {
   width: 100%;
+  max-height: 22.5rem;
   border-top-right-radius: 7px;
   border-top-left-radius: 7px;
   position: relative;

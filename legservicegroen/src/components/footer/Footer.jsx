@@ -79,7 +79,7 @@ const Footer = () => {
         </div>
         <span className={stl.designedBy}>
           Design by{" "}
-          <a href="https://0xWebDev.com">
+          <a href="https://0xWebDev.com" target="_blank" rel="noreferrer">
             0<span className={stl.blueSpan}>x</span>WebDev
           </a>
         </span>

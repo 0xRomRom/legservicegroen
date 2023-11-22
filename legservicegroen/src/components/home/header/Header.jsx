@@ -52,24 +52,24 @@ const Header = () => {
         </m.div>
       </div>
       <div className={stl.rightblock}>
-        <AnimatePresence>
-          <m.span
-            className={stl.floortype}
-            initial={{ opacity: 1 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 1 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-          >
-            {floorType}
-          </m.span>
+        <m.span
+          className={stl.floortype}
+          initial={{ opacity: 1 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+        >
+          {floorType}
+        </m.span>
+        <AnimatePresence mode="wait">
           <m.img
             key={currentImage}
             src={currentImage}
             alt="Floor"
             initial={{ opacity: 0.8 }}
             animate={{ opacity: 1 }}
-            // exit={{ opacity: 1 }}
-            // transition={{ duration: 0.4, ease: "easeInOut" }}
+            exit={{ opacity: 1 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           />
         </AnimatePresence>
       </div>
