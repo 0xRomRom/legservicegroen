@@ -1,0 +1,24 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.842);
+  z-index: 1000;
+  height: 100vh;
+  width: 100vw;
+}
+
+.imgWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 0rem 1rem;
+}
+
+.overlay img {
+  border-radius: 0.4rem;
+  object-fit: cover;
+  max-width: 100%;
+}
