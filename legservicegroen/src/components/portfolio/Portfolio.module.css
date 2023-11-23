@@ -38,9 +38,11 @@
 .tilesGrid {
   position: relative;
   /* background-color: green; */
-  margin: 5rem 0rem;
+  margin-top: 5rem;
   padding: 0rem 5.7rem;
   /* gap: 0.3rem; */
+  padding-bottom: 5rem;
+  background: linear-gradient(180deg, white, rgba(2, 2, 2, 0.952));
 }
 
 .tileImg {
