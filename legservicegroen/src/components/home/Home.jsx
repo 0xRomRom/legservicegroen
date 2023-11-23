@@ -10,16 +10,7 @@ import { motion as m } from "framer-motion";
 
 const Home = ({ setFloorChoice }) => {
   return (
-    <m.div
-      className={stl.home}
-      initial={{ y: "-10%" }}
-      animate={{ y: "0%" }}
-      transition={{
-        duration: 0.75,
-        ease: "easeOut",
-      }}
-      exit={{ opacity: 1 }}
-    >
+    <m.div className={stl.home}>
       <Header />
       <Diensten />
       <Portfolio setFloorChoice={setFloorChoice} />
