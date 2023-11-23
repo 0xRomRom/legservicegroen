@@ -31,11 +31,6 @@ const PortfolioOverlay = ({ setFloorChoice, floorChoice }) => {
     }
   }, [floorChoice]);
 
-  const backdrop = {
-    visible: { opacity: 1 },
-    hidden: { opacity: 0 },
-  };
-
   const modal = {
     hidden: {
       y: "-40px",

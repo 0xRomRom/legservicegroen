@@ -21,6 +21,7 @@ const Footer = () => {
   return (
     <>
       <div className={stl.footer}>
+        <span className={stl.designedBy}></span>
         <div className={stl.innerFooter}>
           <div className={stl.leftBlock}>
             <h2 className={stl.footerTitle}>Legservice</h2>
@@ -85,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
         <span className={stl.designedBy}>
-          Design by{" "}
+          Design <br />
           <a href="https://0xWebDev.com" target="_blank" rel="noreferrer">
             0<span className={stl.blueSpan}>x</span>WebDev
           </a>
