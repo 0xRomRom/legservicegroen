@@ -6,10 +6,13 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
   const navigate = useNavigate();
-  const [activePage, setActivePage] = useState("home");
+  const navbarLocation =
+    localStorage.getItem("navbarLocation") || "defaultStyle";
+  const [activePage, setActivePage] = useState(navbarLocation);
 
   const tabSwitcher = (newTab) => {
     setActivePage(newTab);
+    localStorage.setItem("navbarLocation", newTab);
   };
 
   const handleNavigation = () => {
