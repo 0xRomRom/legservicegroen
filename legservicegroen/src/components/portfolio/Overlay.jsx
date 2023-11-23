@@ -18,7 +18,14 @@ const Overlay = ({ overlaySrc, setOverlaySrc }) => {
   };
 
   return (
-    <div className={stl.overlay} onClick={closeModal}>
+    <m.div
+      className={stl.overlay}
+      onClick={closeModal}
+      variants={modal}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+    >
       <div className={stl.imgWrap}>
         <m.img
           src={overlaySrc}
@@ -30,7 +37,7 @@ const Overlay = ({ overlaySrc, setOverlaySrc }) => {
           transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
         />
       </div>
-    </div>
+    </m.div>
   );
 };
 
