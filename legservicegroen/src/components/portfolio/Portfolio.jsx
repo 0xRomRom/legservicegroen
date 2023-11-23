@@ -1,6 +1,6 @@
 import stl from "./Portfolio.module.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { motion as m } from "framer-motion";
+import { motion as m, AnimatePresence } from "framer-motion";
 import Overlay from "./Overlay";
 import { useState } from "react";
 
@@ -40,9 +40,9 @@ const Portfolio = () => {
                 className={stl.tileImg}
                 initial={{ opacity: 0, y: "5px" }}
                 whileInView={{ opacity: 1, y: "0px" }}
-                transition={{ ease: "easeInOut" }}
                 onClick={() => handleModalOpen("./Floor1.jpg")}
               />
+
               <m.img
                 src="./Floor2.jpg"
                 alt="Floor image"
@@ -50,6 +50,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: "5px" }}
                 whileInView={{ opacity: 1, y: "0px" }}
                 transition={{ duration: 0.5 }}
+                onClick={() => handleModalOpen("./Floor2.jpg")}
               />
               <m.img
                 src="./Floor3.jpg"
