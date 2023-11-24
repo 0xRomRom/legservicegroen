@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import stl from "./Specialiteiten.module.css";
 import { laminaatSoorten, pvcSoorten } from "../utils/portfoliosoorten";
+import { motion as m } from "framer-motion";
 
 const Specialiteiten = () => {
   const [activeButton, setActiveButton] = useState("Laminaat");
@@ -88,7 +89,13 @@ const Specialiteiten = () => {
         {activeButton === "Laminaat" && (
           <>
             {laminaatSoorten.map((soort, index) => (
-              <div className={stl.gridItem} key={index}>
+              <m.div
+                className={stl.gridItem}
+                key={index}
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className={stl.innerGridItem}>
                   <span className={stl.tileCopy}>{soort.copy}</span>
                   <img
@@ -97,14 +104,20 @@ const Specialiteiten = () => {
                     className={stl.tileImg}
                   />
                 </div>
-              </div>
+              </m.div>
             ))}
           </>
         )}
         {activeButton === "PVC" && (
           <>
             {pvcSoorten.map((soort, index) => (
-              <div className={stl.gridItem} key={index}>
+              <m.div
+                className={stl.gridItem}
+                key={index}
+                animate={{ opacity: 1 }}
+                initial={{ opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              >
                 <div className={stl.innerGridItem}>
                   <span className={stl.tileCopy}>{soort.copy}</span>
                   <img
@@ -113,7 +126,7 @@ const Specialiteiten = () => {
                     className={stl.tileImg}
                   />
                 </div>
-              </div>
+              </m.div>
             ))}
           </>
         )}
