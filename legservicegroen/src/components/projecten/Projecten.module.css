@@ -1,0 +1,64 @@
+.projecten {
+  padding-bottom: 4rem;
+}
+
+.topWrap {
+  height: 40rem;
+  background: url("../../assets/Projecten.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 3rem;
+}
+
+.topWrap h1 {
+  margin-left: 6rem;
+  top: 3rem;
+  position: relative;
+  font-size: 56px;
+  color: white;
+  background-color: black;
+  display: inline;
+  padding-top: 0.6rem;
+  padding-bottom: 1.1rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 1rem;
+  clip-path: polygon(0% 0%, 100% 0%, 50% 1000%);
+}
+
+.mainContent {
+  position: relative;
+  padding: 5rem 0rem;
+}
+
+.productenHero {
+  font-size: 36px;
+  margin-left: 6rem;
+}
+
+.projectCopy1 {
+  width: 37rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  font-size: 18px;
+}
+
+.possibleBanner {
+  height: 10rem;
+  margin-top: 5rem;
+  background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 5rem;
+}
+
+.bannerItem {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  font-size: 24px;
+}
