@@ -48,7 +48,7 @@
 .tileImg {
   position: relative;
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
   border: 1px solid transparent;
   margin: 5px;
   border-radius: 0.4rem;

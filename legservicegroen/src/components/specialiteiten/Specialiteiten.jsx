@@ -98,10 +98,13 @@ const Specialiteiten = () => {
               >
                 <div className={stl.innerGridItem}>
                   <span className={stl.tileCopy}>{soort.copy}</span>
-                  <img
+                  <m.img
                     src={soort.src}
                     alt="Vloertype"
                     className={stl.tileImg}
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
                   />
                 </div>
               </m.div>
@@ -120,10 +123,13 @@ const Specialiteiten = () => {
               >
                 <div className={stl.innerGridItem}>
                   <span className={stl.tileCopy}>{soort.copy}</span>
-                  <img
+                  <m.img
                     src={soort.src}
                     alt="Vloertype"
                     className={stl.tileImg}
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
                   />
                 </div>
               </m.div>

@@ -39,7 +39,7 @@ const Diensten = () => {
           transition={{ duration: 0.75 }}
         >
           <div className={stl.innerContainer}>
-            <h3>PVC</h3>
+            <h3>Laminaat</h3>
             <p className={stl.modalCopy}>
               Samengevat bieden PVC-vloeren een uitstekende combinatie van
               duurzaamheid, veelzijdigheid en esthetiek, waardoor ze een
@@ -55,7 +55,7 @@ const Diensten = () => {
           transition={{ duration: 0.85 }}
         >
           <div className={stl.innerContainer}>
-            <h3>Visgraat</h3>
+            <h3>PVC</h3>
             <p className={stl.modalCopy}>
               Visgraatvloeren passen goed in zowel klassieke als moderne
               interieurs en voegen een gevoel van verfijning toe aan elke
@@ -72,7 +72,7 @@ const Diensten = () => {
           transition={{ duration: 0.95 }}
         >
           <div className={stl.innerContainer}>
-            <h3>Eik</h3>
+            <h3>Tapijt</h3>
             <p className={stl.modalCopy}>
               Eiken vloeren stralen een tijdloze schoonheid uit met hun
               natuurlijke nerfpatronen en warme tinten. Of het nu gaat om een

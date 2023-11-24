@@ -72,7 +72,7 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  background: url("../../../assets/Floor2.jpg");
+  background: url("../../../assets/PVC\ Vloer.jpg");
   background-position: bottom;
   background-size: 460%;
   background-repeat: no-repeat;
@@ -92,7 +92,7 @@
   overflow: hidden;
   position: relative;
   display: flex;
-  background: url("../../../assets/Floor4.jpg");
+  background: url("../../../assets/Tapijt.webp");
   background-position: bottom;
   background-size: 195%;
   background-repeat: no-repeat;
@@ -141,6 +141,7 @@
   z-index: 10;
   font-size: 32px;
   bottom: 10px;
+  text-shadow: 0px 0px 8px black !important;
 }
 
 .gridImg {

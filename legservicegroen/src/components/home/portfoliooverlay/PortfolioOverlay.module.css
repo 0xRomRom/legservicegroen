@@ -36,6 +36,7 @@
   font-size: 38px;
   top: -8rem;
   position: relative;
+  text-shadow: 0px 0px 2px black;
 }
 
 .close {

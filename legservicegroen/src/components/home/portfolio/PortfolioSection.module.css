@@ -32,6 +32,7 @@
   z-index: 2;
   color: white;
   font-size: 48px;
+  text-shadow: 0px 0px 3px black;
 }
 
 .bgbox {
@@ -97,6 +98,7 @@
   transition: all 0.3s ease-in-out;
   font-size: 24px !important;
   margin-top: 8rem;
+  text-shadow: 0px 0px 3px black;
 }
 .modalTitleMeer {
   position: relative !important;
