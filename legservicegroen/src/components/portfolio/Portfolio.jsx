@@ -1,6 +1,6 @@
 import stl from "./Portfolio.module.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 import Overlay from "./Overlay";
 import { useState } from "react";
 
@@ -59,6 +59,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: "5px" }}
                 whileInView={{ opacity: 1, y: "0px" }}
                 transition={{ duration: 0.5 }}
+                onClick={() => handleModalOpen("./Floor3.jpg")}
               />
               <m.img
                 src="./Floor4.jpg"
@@ -67,6 +68,7 @@ const Portfolio = () => {
                 initial={{ opacity: 0, y: "5px" }}
                 whileInView={{ opacity: 1, y: "0px" }}
                 transition={{ duration: 0.5 }}
+                onClick={() => handleModalOpen("./Floor4.jpg")}
               />
               <m.img
                 src="./Floor1.jpg"

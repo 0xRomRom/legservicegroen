@@ -4,13 +4,12 @@ import Navbar from "./components/navbar/Navbar";
 import Home from "./components/home/Home";
 import Portfolio from "./components/portfolio/Portfolio";
 import Footer from "./components/footer/Footer";
+import Specialiteiten from "./components/specialiteiten/Specialiteiten";
 import { AnimatePresence } from "framer-motion";
-import { useLocation } from "react-router-dom";
 import PortfolioOverlay from "./components/home/portfoliooverlay/PortfolioOverlay";
 import { useState } from "react";
 
 function App() {
-  const location = useLocation();
   const [floorChoice, setFloorChoice] = useState("");
   return (
     <div className="App">
@@ -25,18 +24,15 @@ function App() {
 
       <Navbar />
       <AnimatePresence>
-        <Routes location={location}>
+        <Routes>
           <Route
             index
             path="/"
             element={<Home setFloorChoice={setFloorChoice} />}
-            key={location.pathname}
           />
 
-          <Route
-            path="/portfolio"
-            element={<Portfolio key={location.pathname} />}
-          />
+          <Route path="/portfolio" element={<Portfolio />} />
+          <Route path="/specialiteiten" element={<Specialiteiten />} />
         </Routes>
       </AnimatePresence>
       <Footer />

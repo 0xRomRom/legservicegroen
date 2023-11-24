@@ -6,13 +6,12 @@ import Floor4 from "../../../assets/Floor4.jpg";
 import Blanklogo from "../../../assets/Blanklogo.png";
 import { useState, useEffect } from "react";
 import { motion as m, AnimatePresence } from "framer-motion";
-
+const floorTypes = ["Klassiek", "PVC", "Breed", "Eik"];
+const floorImages = [Floor1, Floor2, Floor3, Floor4];
 const Header = () => {
   const [currentImage, setCurrentImage] = useState(Floor1);
   const [floorType, setFloorType] = useState("Hout");
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const floorTypes = ["Klassiek", "PVC", "Breed", "Eik"];
-  const floorImages = [Floor1, Floor2, Floor3, Floor4];
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -24,7 +23,7 @@ const Header = () => {
 
     // Clean up the interval on component unmount
     return () => clearInterval(intervalId);
-  }, [currentImageIndex, floorImages, floorTypes]);
+  }, [currentImageIndex]);
 
   return (
     <header className={stl.header}>

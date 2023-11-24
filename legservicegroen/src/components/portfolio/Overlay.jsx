@@ -1,5 +1,5 @@
 import stl from "./Overlay.module.css";
-import { motion as m, AnimatePresence } from "framer-motion";
+import { motion as m } from "framer-motion";
 
 const Overlay = ({ overlaySrc, setOverlaySrc }) => {
   const closeModal = () => {
