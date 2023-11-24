@@ -11,16 +11,18 @@ const Projecten = () => {
         <h1>Projecten</h1>
       </div>
       <div className={stl.mainContent}>
-        <h2 className={stl.productenHero}>
-          Ook hét adres voor grote projecten
-        </h2>
-        <p className={stl.projectCopy1}>
-          Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
-          <br /> Wij van Legservice Groen gaan graag in gesprek met u over de
-          mogelijkheden. Of het gaat om het verwijderen van de huidige vloer,
-          het plaatsen van een nieuwe vloer of egaliseren, geen uitdaging is te
-          groot!
-        </p>
+        <div className={stl.heroWrap}>
+          <h2 className={stl.productenHero}>
+            Ook hét adres voor grote projecten
+          </h2>
+          <p className={stl.projectCopy1}>
+            Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
+            <br /> Wij van Legservice Groen gaan graag in gesprek met u over de
+            mogelijkheden. Of het gaat om het verwijderen van de huidige vloer,
+            het plaatsen van een nieuwe vloer of egaliseren, geen uitdaging is
+            te groot!
+          </p>
+        </div>
         <div className={stl.possibleBanner}>
           <m.div
             className={stl.bannerItem}
@@ -93,6 +95,31 @@ const Projecten = () => {
           >
             Geen uitdaging te groot!
           </m.span>
+        </div>
+        <div className={stl.finalBox}>
+          <div>
+            <h2 className={stl.finalTitle}>Advies op maat</h2>
+            <p className={stl.projectCopy3}>
+              Door samen in gesprek te gaan over de mogelijkheden, kunnen wij
+              kijken hoe wij uw project het beste kunnen benaderen.
+              <br />
+              <br />
+              Zit u met tijdnood, of andere specifieke problemen, dan denken wij
+              graag met u mee. Wij hebben voor veel klanten een passende
+              oplossing weten te realiseren. <br /> <br /> Door samen in gesprek
+              te gaan over de mogelijkheden, kunnen wij kijken hoe wij uw
+              project het beste kunnen benaderen.
+              <br /> <br />
+              Zit u met tijdnood, of andere specifieke problemen, dan denken wij
+              graag met u mee. Wij hebben voor veel klanten een passende
+              oplossing weten te realiseren.
+            </p>
+          </div>
+          <img
+            src="/Industrial.jpg"
+            alt="Industrieel gebouw"
+            className={stl.industrialSite}
+          />
         </div>
       </div>
     </div>
