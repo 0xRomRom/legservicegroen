@@ -29,7 +29,7 @@
 
 .mainContent {
   position: relative;
-  padding: 5rem 0rem;
+  padding: 10rem 0rem;
 }
 
 .productenHero {
@@ -46,7 +46,7 @@
 
 .possibleBanner {
   height: 10rem;
-  margin-top: 5rem;
+  margin-top: 10rem;
   background-color: black;
   display: flex;
   justify-content: space-evenly;
@@ -61,4 +61,43 @@
   align-items: center;
   gap: 1rem;
   font-size: 24px;
+}
+
+.productenHero2 {
+  font-size: 36px;
+  margin-left: 6rem;
+}
+
+.projectCopy2 {
+  width: 37rem;
+  margin-left: 6rem;
+  margin-top: 2rem;
+  font-size: 18px;
+}
+
+.verassenBlock {
+  display: flex;
+  justify-content: flex-start;
+  padding-right: 2rem;
+  margin-top: 10rem;
+}
+
+.lottieAnimation {
+  width: 20rem;
+  margin-left: 5rem;
+}
+
+.uitdagingBanner {
+  height: 10rem;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10rem;
+  font-size: 36px;
+  font-weight: bold;
+}
+
+.uitdagingSpan {
+  color: white;
 }

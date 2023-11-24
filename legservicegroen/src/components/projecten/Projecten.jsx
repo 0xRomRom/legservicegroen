@@ -1,6 +1,8 @@
 import stl from "./Projecten.module.css";
 import { FaCheckDouble } from "react-icons/fa6";
 import { motion as m } from "framer-motion";
+import Lottie from "lottie-react";
+import construction from "../../assets/Construction.json";
 
 const Projecten = () => {
   return (
@@ -10,7 +12,7 @@ const Projecten = () => {
       </div>
       <div className={stl.mainContent}>
         <h2 className={stl.productenHero}>
-          Ook het adres voor grote projecten
+          Ook hét adres voor grote projecten
         </h2>
         <p className={stl.projectCopy1}>
           Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
@@ -56,6 +58,41 @@ const Projecten = () => {
             <FaCheckDouble />
             Loodsen
           </m.div>
+        </div>
+        <div className={stl.verassenBlock}>
+          <div>
+            <h2 className={stl.productenHero2}>
+              Laat u verassen door de mogelijkheden
+            </h2>
+            <p className={stl.projectCopy2}>
+              Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
+              <br /> Wij van Legservice Groen gaan graag in gesprek met u over
+              de mogelijkheden. Of het gaat om het verwijderen van de huidige
+              vloer, het plaatsen van een nieuwe vloer of egaliseren, geen
+              uitdaging is te groot!
+              <br />
+              <br />
+              Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
+              <br /> Wij van Legservice Groen gaan graag in gesprek met u over
+              de mogelijkheden. Of het gaat om het verwijderen van de huidige
+              vloer, het plaatsen van een nieuwe vloer of egaliseren, geen
+              uitdaging is te groot!
+            </p>
+          </div>
+          <Lottie
+            animationData={construction}
+            className={stl.lottieAnimation}
+          />
+        </div>
+        <div className={stl.uitdagingBanner}>
+          <m.span
+            className={stl.uitdagingSpan}
+            initial={{ opacity: 0, y: "-100%" }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+          >
+            Geen uitdaging te groot!
+          </m.span>
         </div>
       </div>
     </div>
