@@ -3,6 +3,7 @@ import { FaCheckDouble } from "react-icons/fa6";
 import { motion as m } from "framer-motion";
 import Lottie from "lottie-react";
 import construction from "../../assets/Construction.json";
+import connection from "../../assets/Connection.json";
 
 const Projecten = () => {
   return (
@@ -120,6 +121,13 @@ const Projecten = () => {
             alt="Industrieel gebouw"
             className={stl.industrialSite}
           />
+        </div>
+        <div className={stl.ctaBottomBox}>
+          <Lottie animationData={connection} className={stl.lottieAnimation2} />
+          <div className={stl.bottomRightBlock}>
+            <span className={stl.bottomCtaSpan}>Let's get in touch</span>
+            <button className={stl.bottomCta}>Today!</button>
+          </div>
         </div>
       </div>
     </div>

@@ -129,3 +129,46 @@
   max-width: 40rem;
   border-radius: 0.4rem;
 }
+
+.ctaBottomBox {
+  margin-top: 10rem;
+  padding: 5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottomCtaSpan {
+  font-size: 44px;
+  font-weight: bold;
+  position: relative;
+  left: -8rem;
+}
+
+.bottomRightBlock {
+  display: flex;
+  flex-direction: column;
+  /* background-color: red; */
+  height: 15rem;
+  justify-content: space-between;
+}
+
+.lottieAnimation2 {
+  width: 30rem;
+}
+
+.bottomCta {
+  background-color: rgb(104, 134, 233);
+  border: none;
+  outline: none;
+  padding: 2rem;
+  border-radius: 4rem;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.bottomCta:hover {
+  transform: scale(1.1);
+}

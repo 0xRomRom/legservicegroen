@@ -3,6 +3,7 @@
   height: 50rem;
   margin-bottom: 10rem;
   background-color: black;
+  background: linear-gradient(180deg, black, rgb(24, 24, 24));
   display: flex;
   justify-content: center;
   align-items: center;
