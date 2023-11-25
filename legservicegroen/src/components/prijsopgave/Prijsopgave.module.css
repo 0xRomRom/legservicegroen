@@ -54,15 +54,19 @@
 .progressBar {
   width: 95%;
   position: relative;
-  height: 2rem;
+  height: 1rem;
   background-color: white;
+  background-color: rgb(79, 138, 224);
   margin-bottom: 1rem;
-  border-radius: 0.4rem;
+  border-radius: 0.5rem;
+  border: 2px solid black;
+  padding: 1px;
 }
 
 .innerProgressBar {
   position: relative;
   width: 20%;
   height: 100%;
-  background-color: green;
+  background-color: yellow;
+  border-radius: 0.5rem;
 }

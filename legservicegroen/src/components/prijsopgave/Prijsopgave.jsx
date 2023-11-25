@@ -6,6 +6,7 @@ const Prijsopgave = () => {
   const [progress, setProgress] = useState(100 / 6);
 
   const incrementWidth = () => {
+    if (progress >= 100) return;
     setProgress(100 / 6 + progress);
   };
 
