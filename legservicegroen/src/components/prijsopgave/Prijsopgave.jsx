@@ -12,11 +12,12 @@ const initialFormstate = {
   q5: "",
   q6: "",
 };
-const vragenLijst = ["1. Soort opdracht", "2. Opdracht aantal m2"];
+const vragenLijst = ["1. Soort opdracht", "2. Opdracht aantal m2", "3. Regio"];
 
 const Prijsopgave = () => {
   const q1Ref = useRef(null);
   const q2Ref = useRef(null);
+  const q3Ref = useRef(null);
   const [inputError, setInputError] = useState(false);
 
   const [progress, setProgress] = useState(100 / 6);
@@ -115,9 +116,10 @@ const Prijsopgave = () => {
 
         <form className={stl.inputWrap}>
           <div className={stl.question}>
-            <AnimatePresence mode="wait">
+            <AnimatePresence>
               {currentQ === 1 && (
                 <m.select
+                  key={Math.random}
                   className={stl.q1Select}
                   ref={q1Ref}
                   initial={{ opacity: 0, x: "-30px" }}
@@ -136,19 +138,43 @@ const Prijsopgave = () => {
                   <option value="vloer_egaliseren">Vloer egaliseren</option>
                 </m.select>
               )}
-            </AnimatePresence>
-            <AnimatePresence>
+
               {currentQ === 2 && (
                 <m.input
                   type="text"
                   placeholder="Aantal m2"
                   className={stl.q2Select}
                   ref={q2Ref}
-                  initial={{ opacity: 0, x: "-30px", delay: 0.5 }}
+                  initial={{ opacity: 0, x: "-30px" }}
                   animate={{ opacity: 1, x: "0px" }}
                   transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
                   exit={{ opacity: 0, x: "-30px" }}
                 />
+              )}
+
+              {currentQ === 3 && (
+                <m.select
+                  className={stl.q1Select}
+                  ref={q3Ref}
+                  initial={{ opacity: 0, x: "-30px" }}
+                  animate={{ opacity: 1, x: "0px" }}
+                  transition={{ duration: 1, ease: "easeInOut" }}
+                  exit={{ opacity: 0, x: "-30px", delay: 1.5 }}
+                >
+                  <option value="default">Kies regio</option>
+                  <option value="drenthe">Drenthe</option>
+                  <option value="flevoland">Flevoland</option>
+                  <option value="friesland">Friesland</option>
+                  <option value="gelderland">Gelderland</option>
+                  <option value="groningen">Groningen</option>
+                  <option value="limburg">Limburg</option>
+                  <option value="noord-brabant">Noord-Brabant</option>
+                  <option value="noord-Holland">Noord-Holand</option>
+                  <option value="overijssel">Overijssel</option>
+                  <option value="utrecht">Utrecht</option>
+                  <option value="zeeland">Zeeland</option>
+                  <option value="zuid-hollanda">Zuid-Holland</option>
+                </m.select>
               )}
             </AnimatePresence>
           </div>
