@@ -7,6 +7,7 @@ import Footer from "./components/footer/Footer";
 import PortfolioOverlay from "./components/home/portfoliooverlay/PortfolioOverlay";
 import Specialiteiten from "./components/specialiteiten/Specialiteiten";
 import Projecten from "./components/projecten/Projecten";
+import Prijsopgave from "./components/prijsopgave/Prijsopgave";
 import { useState } from "react";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/specialiteiten" element={<Specialiteiten />} />
         <Route path="/projecten" element={<Projecten />} />
+        <Route path="/prijsopgave" element={<Prijsopgave />} />
       </Routes>
       <Footer />
     </div>

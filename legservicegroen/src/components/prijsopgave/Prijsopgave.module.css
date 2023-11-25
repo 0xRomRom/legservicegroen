@@ -1,0 +1,68 @@
+.prijsopgave {
+  margin-top: 6rem;
+  padding-left: 6rem;
+  height: 30rem;
+  margin-bottom: 5rem;
+}
+
+.heroBlock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.heroTitle {
+  font-size: 48px;
+}
+
+.blackShape {
+  width: 40px;
+  height: 11px;
+  background-color: rgb(103, 202, 207);
+  border-radius: 3rem;
+  margin-left: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.heroDesc {
+  width: 20rem;
+  margin-top: 1rem;
+  font-size: 18px;
+}
+
+.formWrapper {
+  position: relative;
+  width: 95%;
+  height: 20rem;
+  background-color: rgb(79, 138, 224);
+  margin-top: 4rem;
+  border-radius: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.topBlock {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.progressBar {
+  width: 95%;
+  position: relative;
+  height: 2rem;
+  background-color: white;
+  margin-bottom: 1rem;
+  border-radius: 0.4rem;
+}
+
+.innerProgressBar {
+  position: relative;
+  width: 20%;
+  height: 100%;
+  background-color: green;
+}

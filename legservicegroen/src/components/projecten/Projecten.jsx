@@ -4,8 +4,10 @@ import { motion as m } from "framer-motion";
 import Lottie from "lottie-react";
 import construction from "../../assets/Construction.json";
 import connection from "../../assets/Connection.json";
+import { useNavigate } from "react-router-dom";
 
 const Projecten = () => {
+  const navigate = useNavigate();
   return (
     <div className={stl.projecten}>
       <div className={stl.topWrap}>
@@ -13,16 +15,26 @@ const Projecten = () => {
       </div>
       <div className={stl.mainContent}>
         <div className={stl.heroWrap}>
-          <h2 className={stl.productenHero}>
+          <m.h2
+            className={stl.productenHero}
+            initial={{ opacity: 0, y: "-50%" }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+          >
             Ook hét adres voor grote projecten
-          </h2>
-          <p className={stl.projectCopy1}>
+          </m.h2>
+          <m.p
+            className={stl.projectCopy1}
+            initial={{ opacity: 0, y: "-20%" }}
+            whileInView={{ opacity: 1, y: "0%" }}
+            transition={{ duration: 0.75, delay: 0.3 }}
+          >
             Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
             <br /> Wij van Legservice Groen gaan graag in gesprek met u over de
             mogelijkheden. Of het gaat om het verwijderen van de huidige vloer,
             het plaatsen van een nieuwe vloer of egaliseren, geen uitdaging is
             te groot!
-          </p>
+          </m.p>
         </div>
         <div className={stl.possibleBanner}>
           <m.div
@@ -64,10 +76,20 @@ const Projecten = () => {
         </div>
         <div className={stl.verassenBlock}>
           <div>
-            <h2 className={stl.productenHero2}>
+            <m.h2
+              className={stl.productenHero2}
+              initial={{ opacity: 0, y: "-50%" }}
+              whileInView={{ opacity: 1, y: "0%" }}
+              transition={{ duration: 0.75, delay: 0.3 }}
+            >
               Laat u verassen door de mogelijkheden
-            </h2>
-            <p className={stl.projectCopy2}>
+            </m.h2>
+            <m.p
+              className={stl.projectCopy2}
+              initial={{ opacity: 0, y: "-20%" }}
+              whileInView={{ opacity: 1, y: "0%" }}
+              transition={{ duration: 0.75, delay: 0.3 }}
+            >
               Bent u opzoek naar een dienstverlener voor grotere oppervlaktes?
               <br /> Wij van Legservice Groen gaan graag in gesprek met u over
               de mogelijkheden. Of het gaat om het verwijderen van de huidige
@@ -80,7 +102,7 @@ const Projecten = () => {
               de mogelijkheden. Of het gaat om het verwijderen van de huidige
               vloer, het plaatsen van een nieuwe vloer of egaliseren, geen
               uitdaging is te groot!
-            </p>
+            </m.p>
           </div>
           <Lottie
             animationData={construction}
@@ -99,8 +121,20 @@ const Projecten = () => {
         </div>
         <div className={stl.finalBox}>
           <div>
-            <h2 className={stl.finalTitle}>Advies op maat</h2>
-            <p className={stl.projectCopy3}>
+            <m.h2
+              className={stl.finalTitle}
+              initial={{ opacity: 0, y: "-100%" }}
+              whileInView={{ opacity: 1, y: "0%" }}
+              transition={{ duration: 0.75, delay: 0.3 }}
+            >
+              Advies op maat
+            </m.h2>
+            <m.p
+              className={stl.projectCopy3}
+              initial={{ opacity: 0, y: "-20%" }}
+              whileInView={{ opacity: 1, y: "0%" }}
+              transition={{ duration: 0.75, delay: 0.3 }}
+            >
               Door samen in gesprek te gaan over de mogelijkheden, kunnen wij
               kijken hoe wij uw project het beste kunnen benaderen.
               <br />
@@ -114,19 +148,30 @@ const Projecten = () => {
               Zit u met tijdnood, of andere specifieke problemen, dan denken wij
               graag met u mee. Wij hebben voor veel klanten een passende
               oplossing weten te realiseren.
-            </p>
+            </m.p>
           </div>
-          <img
+          <m.img
             src="/Industrial.jpg"
             alt="Industrieel gebouw"
             className={stl.industrialSite}
+            initial={{ opacity: 0, x: "10%" }}
+            whileInView={{ opacity: 1, x: "0%" }}
+            transition={{ duration: 0.75, delay: 0.3 }}
           />
         </div>
         <div className={stl.ctaBottomBox}>
           <Lottie animationData={connection} className={stl.lottieAnimation2} />
           <div className={stl.bottomRightBlock}>
-            <span className={stl.bottomCtaSpan}>Let's get in touch</span>
-            <button className={stl.bottomCta}>Today!</button>
+            <m.span className={stl.bottomCtaSpan}>Let's get in touch</m.span>
+            <m.button
+              className={stl.bottomCta}
+              initial={{ opacity: 0, y: "50%" }}
+              whileInView={{ opacity: 1, y: "0%" }}
+              transition={{ duration: 1, ease: "easeInOut" }}
+              onClick={() => navigate("/contact")}
+            >
+              Today!
+            </m.button>
           </div>
         </div>
       </div>
