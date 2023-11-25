@@ -1,6 +1,9 @@
 import stl from "./Prijsopgave.module.css";
 import { motion as m, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
+import { GrFormNextLink } from "react-icons/gr";
+import { BiMessageSquareError } from "react-icons/bi";
+
 const initialFormstate = {
   q1: "",
   q2: "",
@@ -14,6 +17,7 @@ const vragenLijst = ["1. Soort opdracht", "2. Opdracht aantal m2"];
 const Prijsopgave = () => {
   const q1Ref = useRef(null);
   const q2Ref = useRef(null);
+  const [inputError, setInputError] = useState(false);
 
   const [progress, setProgress] = useState(100 / 6);
   const [currentQ, setCurrentQ] = useState(1);
@@ -24,44 +28,55 @@ const Prijsopgave = () => {
     e.preventDefault();
     if (currentQ === 1) {
       const q1Value = q1Ref.current.value;
-      if (q1Value !== "default") {
-        setFormState((prevState) => {
-          return {
-            ...prevState,
-            [currentQ]: vragenLijst[0] + ": " + q1Value,
-          };
-        });
-        setCurrentQ(2);
-        incrementWidth();
+      if (q1Value === "default") {
+        setInputError(true);
         return;
       }
+
+      setFormState((prevState) => {
+        return {
+          ...prevState,
+          [currentQ]: vragenLijst[0] + ": " + q1Value,
+        };
+      });
+      setCurrentQ(2);
+      incrementWidth();
+      return;
     }
 
     if (currentQ === 2) {
       const q2Value = q2Ref.current.value;
       const isNumber = /^\d+$/.test(q2Value);
-      if (!isNumber) return;
-      console.log(typeof q2Value);
-      if (q2Value.length > 1) {
-        setFormState((prevState) => {
-          return {
-            ...prevState,
-            [currentQ]: vragenLijst[1] + ": " + q2Value + "m2",
-          };
-        });
-        setCurrentQ(3);
-        incrementWidth();
+      if (!isNumber || q2Value.length < 2) {
+        setInputError(true);
         return;
       }
+      console.log(typeof q2Value);
+      setFormState((prevState) => {
+        return {
+          ...prevState,
+          [currentQ]: vragenLijst[1] + ": " + q2Value + "m2",
+        };
+      });
+      setCurrentQ(3);
+      incrementWidth();
+      return;
     }
   };
 
   useEffect(() => {
-    console.log(formState);
     if (currentQ === 2) {
       q2Ref.current.focus();
     }
-  }, [formState, currentQ]);
+  }, [currentQ]);
+
+  useEffect(() => {
+    if (inputError) {
+      setTimeout(() => {
+        setInputError(false);
+      }, 2000);
+    }
+  }, [inputError, setInputError]);
 
   // Progressbar
   const incrementWidth = () => {
@@ -137,8 +152,16 @@ const Prijsopgave = () => {
               )}
             </AnimatePresence>
           </div>
-          <button className={stl.nextBtn} onClick={progressForm}>
-            Volgende
+          <button
+            className={`${stl.nextBtn} ${inputError ? stl.errorRed : ""}`}
+            onClick={progressForm}
+          >
+            {inputError ? "Incorrect" : "Volgende"}{" "}
+            {inputError ? (
+              <BiMessageSquareError />
+            ) : (
+              <GrFormNextLink className={stl.ctaArrow} />
+            )}
           </button>
         </form>
         <div className={stl.progressBar} onClick={incrementWidth}>
