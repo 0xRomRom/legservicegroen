@@ -1,5 +1,5 @@
 import stl from "./Prijsopgave.module.css";
-import { motion as m } from "framer-motion";
+import { motion as m, AnimatePresence } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 const initialFormstate = {
   q1: "",
@@ -16,52 +16,55 @@ const Prijsopgave = () => {
   const q2Ref = useRef(null);
 
   const [progress, setProgress] = useState(100 / 6);
-  const [currentQ, setCurrentQ] = useState("1");
+  const [currentQ, setCurrentQ] = useState(1);
   const [questionList, setQuestionList] = useState(vragenLijst);
   const [formState, setFormState] = useState(initialFormstate);
 
   const progressForm = (e) => {
     e.preventDefault();
-    const q1Value = q1Ref.current.value;
-    if (q1Value !== "default") {
-      setFormState((prevState) => {
-        return {
-          ...prevState,
-          [currentQ]: q1Value,
-        };
-      });
-      setCurrentQ("2");
-      incrementWidth();
-      return;
+    if (currentQ === 1) {
+      const q1Value = q1Ref.current.value;
+      if (q1Value !== "default") {
+        setFormState((prevState) => {
+          return {
+            ...prevState,
+            [currentQ]: vragenLijst[0] + ": " + q1Value,
+          };
+        });
+        setCurrentQ(2);
+        incrementWidth();
+        return;
+      }
     }
 
-    const q2Value = q2Ref.current.value;
-    if (q1Value !== "default") {
-      setFormState((prevState) => {
-        return {
-          ...prevState,
-          [currentQ]: q2Value,
-        };
-      });
-      setCurrentQ("3");
-      return;
+    if (currentQ === 2) {
+      const q2Value = q2Ref.current.value;
+      console.log(typeof q2Value);
+      if (q2Value.length > 1) {
+        setFormState((prevState) => {
+          return {
+            ...prevState,
+            [currentQ]: vragenLijst[1] + ": " + q2Value + "m2",
+          };
+        });
+        setCurrentQ(3);
+        incrementWidth();
+        return;
+      }
     }
   };
 
   useEffect(() => {
     console.log(formState);
-    if (currentQ === 2) {
-      setTimeout(() => {
-        q2Ref.focus();
-      }, 1000);
-    }
-  }, [formState, currentQ]);
+  }, [formState]);
 
   // Progressbar
   const incrementWidth = () => {
     if (progress >= 100) return;
     setProgress(100 / 6 + progress);
   };
+
+  const maxVisibleQ = 6; // Define the maximum value of currentQ for visibility
 
   return (
     <div className={stl.prijsopgave}>
@@ -75,40 +78,63 @@ const Prijsopgave = () => {
         </p>
       </div>
       <div className={stl.formWrapper}>
-        <h2 className={stl.opdrachtSoort}>{questionList[currentQ - 1]}</h2>
+        <AnimatePresence mode="wait">
+          {currentQ <= maxVisibleQ && (
+            <m.h2
+              key={`opdrachtSoort-${currentQ}`}
+              className={stl.opdrachtSoort}
+              initial={{ opacity: 0, y: "-30px" }}
+              animate={{ opacity: 1, y: "0px" }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
+              exit={{ opacity: 0, y: "-30px" }}
+            >
+              {questionList[currentQ - 1]}
+            </m.h2>
+          )}
+        </AnimatePresence>
 
         <form className={stl.inputWrap}>
           <div className={stl.question}>
-            {currentQ === "1" && (
-              <div className={stl.question1}>
-                <select className={stl.q1Select} ref={q1Ref}>
-                  <option value="default">Kies opdracht</option>
+            <AnimatePresence mode="wait">
+              {currentQ === 1 && (
+                <m.select
+                  className={stl.q1Select}
+                  ref={q1Ref}
+                  initial={{ opacity: 0, x: "-30px" }}
+                  animate={{ opacity: 1, x: "0px" }}
+                  transition={{ duration: 0.5, ease: "easeInOut" }}
+                  exit={{ opacity: 0, x: "-30px" }}
+                >
+                  <option value="default">Kies opdracht(en)</option>
                   <option value="laminaat_montage">Laminaat montage</option>
                   <option value="pvc_montage">PVC montage</option>
                   <option value="tapijt_montage">Tapijt montage</option>
                   <option value="vloer_demontage">Tegelvloer demontage</option>
                   <option value="vloer_demontage">
-                    Tapijt/Parket vloer demontage
+                    Tapijt/Parket demontage
                   </option>
                   <option value="vloer_egaliseren">Vloer egaliseren</option>
-                </select>
-              </div>
-            )}
-            {currentQ === "2" && (
-              <div className={stl.question1}>
-                <input
+                </m.select>
+              )}
+            </AnimatePresence>
+            <AnimatePresence>
+              {currentQ === 2 && (
+                <m.input
                   type="text"
                   placeholder="Aantal m2"
                   className={stl.q2Select}
                   ref={q2Ref}
+                  initial={{ opacity: 0, x: "-30px", delay: 0.5 }}
+                  animate={{ opacity: 1, x: "0px" }}
+                  transition={{ duration: 0.5, ease: "easeInOut", delay: 0.5 }}
+                  exit={{ opacity: 0, x: "-30px" }}
                 />
-              </div>
-            )}
-
-            <button className={stl.nextBtn} onClick={progressForm}>
-              Volgende
-            </button>
+              )}
+            </AnimatePresence>
           </div>
+          <button className={stl.nextBtn} onClick={progressForm}>
+            Volgende
+          </button>
         </form>
         <div className={stl.progressBar} onClick={incrementWidth}>
           <m.div

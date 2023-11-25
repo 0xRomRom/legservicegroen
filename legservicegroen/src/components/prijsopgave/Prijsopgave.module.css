@@ -85,6 +85,9 @@
   position: relative;
   height: 5rem;
   width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .question {
@@ -93,6 +96,8 @@
   justify-content: center;
   align-items: center;
   padding: 1rem 0rem;
+  width: 31rem;
+  /* background-color: red; */
 }
 
 .q1Select {
@@ -138,11 +143,15 @@
 }
 
 .nextBtn:hover {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  background-color: black;
+  color: yellow;
 }
 
 option {
   color: black;
   background-color: yellow;
+}
+
+.questionBox {
+  background-color: red;
 }
