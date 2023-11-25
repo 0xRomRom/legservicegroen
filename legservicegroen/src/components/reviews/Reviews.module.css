@@ -88,33 +88,35 @@
 }
 
 .reviewsGrid {
-  height: 30rem;
-  margin: 10rem 0rem;
-  border: 1px solid red;
+  width: 80rem;
+  margin: 10rem auto;
+  /* border: 1px solid red; */
   /* background-color: rgb(218, 218, 218); */
   padding: 2rem 1rem;
   display: flex;
-  justify-content: center;
-  gap: 2rem;
+  justify-content: fl;
+  gap: 4rem;
+  flex-wrap: wrap;
 }
 
 .reviewTile {
   width: 23rem;
   height: 17.5rem;
   background-color: black;
-  background: linear-gradient(180deg, black, rgb(39, 37, 37));
+  background: linear-gradient(20deg, rgb(58, 55, 55), rgb(58, 55, 55), black);
   border-radius: 2rem;
   position: relative;
   z-index: 5;
+  margin-bottom: 2rem;
 }
 .reviewTile:before {
   content: "";
   width: 0px;
   height: 0px;
   position: absolute;
-  border-left: 24px solid black;
+  border-left: 24px solid rgb(58, 55, 55);
   border-right: 12px solid transparent;
-  border-top: 12px solid black;
+  border-top: 12px solid rgb(58, 55, 55);
   border-bottom: 20px solid transparent;
   left: 32px;
   bottom: -29.5px;
@@ -173,4 +175,31 @@
 
 .userCopy {
   color: white;
+}
+
+.addReviewTile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  cursor: pointer;
+  background-color: rgb(85, 147, 240) !important;
+}
+
+.addReviewTile:hover .addIcon {
+  color: white;
+  transform: scale(1.1);
+}
+
+.addIcon {
+  width: 3rem;
+  font-size: 3rem;
+  color: rgb(182, 182, 182);
+  transition: all 0.3s ease-in-out;
+}
+
+.addReviewText {
+  font-size: 1.5rem;
+  color: rgb(255, 255, 255);
 }

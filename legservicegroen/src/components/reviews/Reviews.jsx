@@ -4,6 +4,7 @@ import reviewAnimation from "../../assets/Review.json";
 import { motion as m } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NumberCounter from "../home/klantwaardering/NumberCounter";
+import { FaPlus } from "react-icons/fa6";
 
 const Reviews = () => {
   const [ref, inView] = useInView({
@@ -69,6 +70,32 @@ const Reviews = () => {
               geweldig en ziet er fantastisch uit. Aanrader!"
             </p>
           </div>
+        </div>
+        <div className={stl.reviewTile}>
+          <div className={stl.revToprow}>
+            <img
+              src="./Floor4.jpg"
+              alt="User profile"
+              className={stl.userImg}
+            />
+            <div className={stl.firstBlock}>
+              <span className={stl.userName}>Robert F.</span>
+              <span className={stl.jobType}>PVC Vloer installeren</span>
+            </div>
+            <div className={stl.userRating}>8/10</div>
+          </div>
+          <div className={stl.userCopyWrap}>
+            <p className={stl.userCopy}>
+              "Vloeren leggen werd een ervaring met Legservice Groen! De
+              PVC-installatie was vakkundig en snel. De nieuwe vloer voelt
+              geweldig en ziet er fantastisch uit. Aanrader!"
+            </p>
+          </div>
+        </div>
+
+        <div className={`${stl.reviewTile} ${stl.addReviewTile}`}>
+          <FaPlus className={stl.addIcon} />
+          <h3 className={stl.addReviewText}>Plaats review</h3>
         </div>
       </div>
     </div>
