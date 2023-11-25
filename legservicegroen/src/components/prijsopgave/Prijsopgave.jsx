@@ -39,6 +39,8 @@ const Prijsopgave = () => {
 
     if (currentQ === 2) {
       const q2Value = q2Ref.current.value;
+      const isNumber = /^\d+$/.test(q2Value);
+      if (!isNumber) return;
       console.log(typeof q2Value);
       if (q2Value.length > 1) {
         setFormState((prevState) => {
@@ -56,7 +58,10 @@ const Prijsopgave = () => {
 
   useEffect(() => {
     console.log(formState);
-  }, [formState]);
+    if (currentQ === 2) {
+      q2Ref.current.focus();
+    }
+  }, [formState, currentQ]);
 
   // Progressbar
   const incrementWidth = () => {
