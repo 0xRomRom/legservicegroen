@@ -8,6 +8,7 @@ import PortfolioOverlay from "./components/home/portfoliooverlay/PortfolioOverla
 import Specialiteiten from "./components/specialiteiten/Specialiteiten";
 import Projecten from "./components/projecten/Projecten";
 import Prijsopgave from "./components/prijsopgave/Prijsopgave";
+import Reviews from "./components/reviews/Reviews";
 import { useState } from "react";
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route path="/specialiteiten" element={<Specialiteiten />} />
         <Route path="/projecten" element={<Projecten />} />
         <Route path="/prijsopgave" element={<Prijsopgave />} />
+        <Route path="/Reviews" element={<Reviews />} />
       </Routes>
       <Footer />
     </div>

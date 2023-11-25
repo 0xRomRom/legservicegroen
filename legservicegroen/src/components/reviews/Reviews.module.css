@@ -1,0 +1,176 @@
+.reviews {
+  margin-top: 6rem;
+}
+
+.topBlock {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  flex-direction: column;
+  padding-left: 6rem;
+}
+
+.heroBlock {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-end;
+}
+
+.heroTitle {
+  font-size: 48px;
+}
+
+.blackShape {
+  width: 40px;
+  height: 11px;
+  background-color: rgb(103, 202, 207);
+  border-radius: 3rem;
+  margin-left: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.heroDesc {
+  width: 20rem;
+  margin-top: 1rem;
+  font-size: 18px;
+}
+
+.reviewsWrapper {
+  height: 45rem;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(85, 147, 240);
+  background: linear-gradient(
+    180deg,
+    white,
+    rgb(85, 147, 240),
+    rgb(85, 147, 240),
+    rgb(85, 147, 240),
+    rgb(85, 147, 240),
+    rgb(85, 147, 240),
+    white
+  );
+  margin-top: 5rem;
+}
+.lottieAnimation {
+  width: 40rem;
+  /* opacity: 0.5; */
+  top: -1rem;
+  position: relative;
+}
+
+.heroTitle {
+  font-size: 48px;
+}
+
+.subHeroTitle {
+  font-size: 42px;
+  color: white;
+}
+
+.rating {
+  margin-top: 2rem;
+  font-size: 42px;
+}
+
+.ratingWrap {
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+}
+
+.reviewsGrid {
+  height: 30rem;
+  margin: 10rem 0rem;
+  border: 1px solid red;
+  /* background-color: rgb(218, 218, 218); */
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.reviewTile {
+  width: 23rem;
+  height: 17.5rem;
+  background-color: black;
+  background: linear-gradient(180deg, black, rgb(39, 37, 37));
+  border-radius: 2rem;
+  position: relative;
+  z-index: 5;
+}
+.reviewTile:before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  border-left: 24px solid black;
+  border-right: 12px solid transparent;
+  border-top: 12px solid black;
+  border-bottom: 20px solid transparent;
+  left: 32px;
+  bottom: -29.5px;
+}
+
+.revToprow {
+  position: relative;
+  height: 5rem;
+  /* background-color: red; */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.userImg {
+  border-radius: 50%;
+  height: 3.25rem;
+}
+
+.userName {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.firstBlock {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 1rem;
+  gap: 0.3rem;
+}
+
+.jobType {
+  color: rgb(197, 197, 197);
+}
+
+.userRating {
+  width: 8.5rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 28px;
+  letter-spacing: 3px;
+  /* background-color: red; */
+}
+
+.userCopyWrap {
+  width: 100%;
+  height: calc(100% - 5rem);
+  padding: 1rem;
+}
+
+.userCopy {
+  color: white;
+}
