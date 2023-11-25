@@ -4,6 +4,7 @@ import { useState } from "react";
 
 const Prijsopgave = () => {
   const [progress, setProgress] = useState(100 / 6);
+  const [currentQuestion, setCurrentQuestion] = useState("q1");
 
   const incrementWidth = () => {
     if (progress >= 100) return;
@@ -22,6 +23,18 @@ const Prijsopgave = () => {
         </p>
       </div>
       <div className={stl.formWrapper}>
+        <h2 className={stl.opdrachtSoort}>Soort opdracht</h2>
+        <form className={stl.inputWrap}>
+          <div className={`${stl.question} ${stl.question1}`}>
+            <select className={stl.q1Select}>
+              <option value="hello">Maak keuze</option>
+              <option value="hello">Hello</option>
+              <option value="hello">Hello</option>
+              <option value="hello">Hello</option>
+            </select>
+            <button className={stl.nextBtn}>Volgende</button>
+          </div>
+        </form>
         <div className={stl.progressBar} onClick={incrementWidth}>
           <m.div
             className={stl.innerProgressBar}
