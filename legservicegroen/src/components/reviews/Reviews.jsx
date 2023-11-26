@@ -132,7 +132,14 @@ const Reviews = () => {
         {fetchedReviews[0] &&
           Object.entries(fetchedReviews[0]).map(([key, review], index) => {
             return (
-              <div className={stl.reviewTile} key={index}>
+              <m.div
+                className={stl.reviewTile}
+                key={index}
+                initial={{ opacity: 0, y: "-30px" }}
+                whileInView={{ opacity: 1, y: "0px", duration: 0.4 }}
+                animate={{ opacity: 1, y: "30px" }}
+                transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+              >
                 <div className={stl.revToprow}>
                   <img
                     src="./Floor4.jpg"
@@ -148,17 +155,21 @@ const Reviews = () => {
                 <div className={stl.userCopyWrap}>
                   <p className={stl.userCopy}>"{review.copy}"</p>
                 </div>
-              </div>
+              </m.div>
             );
           })}
 
-        <div
+        <m.div
           className={`${stl.reviewTile} ${stl.addReviewTile}`}
           onClick={openReviewModal}
+          initial={{ opacity: 0, y: "-30px" }}
+          whileInView={{ opacity: 1, y: "0px", duration: 0.4 }}
+          animate={{ opacity: 1, y: "30px" }}
+          transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
         >
           <FaPlus className={stl.addIcon} />
           <h3 className={stl.addReviewText}>Plaats review</h3>
-        </div>
+        </m.div>
       </div>
     </div>
   );
