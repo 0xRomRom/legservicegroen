@@ -5,34 +5,38 @@ import { motion as m } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NumberCounter from "../home/klantwaardering/NumberCounter";
 import { FaPlus } from "react-icons/fa6";
-import { useEffect } from "react";
-import { getDatabase, get, ref as refs } from "firebase/database";
+import { useEffect, useState } from "react";
+import { getDatabase, get, ref as refs, set } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../utils/firebaseConfig";
 
 const Reviews = () => {
+  const [fetchedReviews, setFetchedReviews] = useState([]);
+
   initializeApp(firebaseConfig);
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
 
-  //   const addReview = () => {
-  //     set(fireRef(db, "reviews/" + "Roms"), {
-  //       username: "Rom",
-  //       email: "rom@gmail.com",
-  //       profile_picture: "image",
-  //     });
-  //   };
+  // const addReview = () => {
+  //   const db = getDatabase();
+  //   set(refs(db, `reviews/${Math.floor(Math.random() * 1000000000)}`), {
+  //     name: "Dakdekkersbedrijf Willems",
+  //     job_type: "PVC vloer installeren",
+  //     rating: "9.5/10",
+  //     copy: "Voor ons huidige bedrijfspand waren we opzoek naar een vloerenlegger en kwamen via google uit op Legservice groen. Na wat persoonlijk contact met de eigenaar gehad te hebben, besloten om ons pand opnieuw te laten bekleden met PVC tegels. Binnen een week was het complete pand betreedbaar en naar wens! Zoek niet verder, dit is uw vloerenspecialist!",
+  //   });
+  // };
 
   useEffect(() => {
+    // addReview();
     const dbRef = refs(getDatabase());
     get(dbRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          // Loop through the children to access individual user data
-          snapshot.forEach((childSnapshot) => {
-            console.log(childSnapshot.val());
-          });
+          console.log(snapshot.val().reviews);
+
+          setFetchedReviews([snapshot.val().reviews]);
         } else {
           console.log("No data available");
         }
@@ -41,6 +45,10 @@ const Reviews = () => {
         console.error(error);
       });
   }, []);
+
+  useEffect(() => {
+    console.log(fetchedReviews);
+  }, [fetchedReviews]);
 
   return (
     <div className={stl.reviews}>
@@ -81,49 +89,52 @@ const Reviews = () => {
         />
       </div>
       <div className={stl.reviewsGrid}>
-        <div className={stl.reviewTile}>
-          <div className={stl.revToprow}>
-            <img
-              src="./Floor4.jpg"
-              alt="User profile"
-              className={stl.userImg}
-            />
-            <div className={stl.firstBlock}>
-              <span className={stl.userName}>Robert F.</span>
-              <span className={stl.jobType}>PVC Vloer installeren</span>
-            </div>
-            <div className={stl.userRating}>8/10</div>
-          </div>
-          <div className={stl.userCopyWrap}>
-            <p className={stl.userCopy}>
-              "Vloeren leggen werd een ervaring met Legservice Groen! De
-              PVC-installatie was vakkundig en snel. De nieuwe vloer voelt
-              geweldig en ziet er fantastisch uit. Aanrader!"
-            </p>
-          </div>
-        </div>
-        <div className={stl.reviewTile}>
-          <div className={stl.revToprow}>
-            <img
-              src="./Floor4.jpg"
-              alt="User profile"
-              className={stl.userImg}
-            />
-            <div className={stl.firstBlock}>
-              <span className={stl.userName}>Robert F.</span>
-              <span className={stl.jobType}>PVC Vloer installeren</span>
-            </div>
-            <div className={stl.userRating}>8/10</div>
-          </div>
-          <div className={stl.userCopyWrap}>
-            <p className={stl.userCopy}>
-              "Vloeren leggen werd een ervaring met Legservice Groen! De
-              PVC-installatie was vakkundig en snel. De nieuwe vloer voelt
-              geweldig en ziet er fantastisch uit. Aanrader!"
-            </p>
-          </div>
-        </div>
+        {fetchedReviews[0] &&
+          Object.entries(fetchedReviews[0]).map(([key, review], index) => {
+            console.log(review);
+            console.log(key);
+            return (
+              <div className={stl.reviewTile} key={index}>
+                <div className={stl.revToprow}>
+                  <img
+                    src="./Floor4.jpg"
+                    alt="User profile"
+                    className={stl.userImg}
+                  />
+                  <div className={stl.firstBlock}>
+                    <span className={stl.userName}>{review.name}</span>
+                    <span className={stl.jobType}>{review.job_type}</span>
+                  </div>
+                  <div className={stl.userRating}>{review.rating}</div>
+                </div>
+                <div className={stl.userCopyWrap}>
+                  <p className={stl.userCopy}>"{review.copy}"</p>
+                </div>
+              </div>
+            );
+          })}
 
+        {/* <div className={stl.reviewTile}>
+          <div className={stl.revToprow}>
+            <img
+              src="./Floor4.jpg"
+              alt="User profile"
+              className={stl.userImg}
+            />
+            <div className={stl.firstBlock}>
+              <span className={stl.userName}>Robert F.</span>
+              <span className={stl.jobType}>PVC Vloer installeren</span>
+            </div>
+            <div className={stl.userRating}>8/10</div>
+          </div>
+          <div className={stl.userCopyWrap}>
+            <p className={stl.userCopy}>
+              "Vloeren leggen werd een ervaring met Legservice Groen! De
+              PVC-installatie was vakkundig en snel. De nieuwe vloer voelt
+              geweldig en ziet er fantastisch uit. Aanrader!"
+            </p>
+          </div>
+        </div> */}
         <div className={`${stl.reviewTile} ${stl.addReviewTile}`}>
           <FaPlus className={stl.addIcon} />
           <h3 className={stl.addReviewText}>Plaats review</h3>
