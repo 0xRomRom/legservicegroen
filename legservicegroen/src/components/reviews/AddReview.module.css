@@ -160,3 +160,24 @@
 .errorBorder {
   border: 1px solid red;
 }
+
+.thanksBox {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-size: 28px;
+  flex-direction: column;
+  padding-bottom: 5rem;
+}
+
+.tnxAnimation {
+  font-size: 1rem;
+}
+
+.tnxWrap {
+  font-size: 1rem;
+  /* background-color: red; */
+  width: 50%;
+}

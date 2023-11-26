@@ -15,6 +15,7 @@ const Reviews = () => {
   const [fetchedReviews, setFetchedReviews] = useState([]);
   const [addingReview, setAddingReview] = useState(false);
   const [averageRating, setAverageRating] = useState(9);
+  const [hasReviewed, setHasReviewed] = useState(false);
 
   initializeApp(firebaseConfig);
   const [ref, inView] = useInView({
@@ -85,6 +86,8 @@ const Reviews = () => {
             setAddingReview={setAddingReview}
             addingReview={addingReview}
             addNewReview={addNewReview}
+            setHasReviewed={setHasReviewed}
+            hasReviewed={hasReviewed}
           />
         )}
       </AnimatePresence>

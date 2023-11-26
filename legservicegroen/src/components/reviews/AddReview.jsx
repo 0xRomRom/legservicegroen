@@ -4,8 +4,16 @@ import { useRef, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { BsEnvelopeCheckFill } from "react-icons/bs";
 import { AnimatePresence, motion as m } from "framer-motion";
+import Lottie from "lottie-react";
+import thanksAnimation from "../../assets/Thanks.json";
 
-const AddReview = ({ setAddingReview, addNewReview, addingReview }) => {
+const AddReview = ({
+  setAddingReview,
+  addNewReview,
+  addingReview,
+  hasReviewed,
+  setHasReviewed,
+}) => {
   const [slideValue, setSlideValue] = useState(5.5);
   const [currentMsgLen, setCurrentMsgLen] = useState(0);
   const sliderRef = useRef();
@@ -23,6 +31,7 @@ const AddReview = ({ setAddingReview, addNewReview, addingReview }) => {
 
   const closeAddingReview = () => {
     setAddingReview(false);
+    setHasReviewed(false);
   };
 
   const handleMessageLength = () => {
@@ -51,7 +60,8 @@ const AddReview = ({ setAddingReview, addNewReview, addingReview }) => {
       setOpdrachtError(true);
       return;
     }
-    addNewReview(naam, opdracht, rating, bericht);
+    // addNewReview(naam, opdracht, rating, bericht);
+    setHasReviewed(true);
   };
 
   return (
@@ -68,63 +78,90 @@ const AddReview = ({ setAddingReview, addNewReview, addingReview }) => {
             <div className={stl.closeRow}>
               <IoClose className={stl.closeBtn} onClick={closeAddingReview} />
             </div>
-            <form className={stl.reviewForm}>
-              <input
-                type="text"
-                placeholder="Uw naam"
-                className={`${stl.nameInput} ${
-                  nameError ? stl.errorBorder : ""
-                }`}
-                ref={nameRef}
-              />
-              <select
-                className={`${stl.opdrachtSelect} ${
-                  opdrachtError ? stl.errorBorder : ""
-                }`}
-                ref={opdrachtRef}
-              >
-                <option value="default">Soort opdracht</option>
-                <option value="Laminaat montage">Laminaat montage</option>
-                <option value="PVC montage">PVC montage</option>
-                <option value="Tapijt montage">Tapijt montage</option>
-                <option value="Tegelvloer demontage">
-                  Tegelvloer demontage
-                </option>
-                <option value="Tapijt/Parket demontage">
-                  Tapijt/Parket demontage
-                </option>
-                <option value="Vloer egaliseren">Vloer egaliseren</option>
-              </select>
-              <div className={stl.ratingDiv}>
-                <span className={stl.ratingSpan}>
-                  {slideValue}/10 <FaStar className={stl.star} />
-                </span>
-                <input
-                  type="range"
-                  min="1"
-                  max="10"
-                  step="0.1"
-                  value={slideValue}
-                  className={stl.rangeSlider}
-                  ref={sliderRef}
-                  onChange={updateSliderVlaue}
-                />
+            {!hasReviewed ? (
+              <>
+                <form className={stl.reviewForm}>
+                  <input
+                    type="text"
+                    placeholder="Uw naam"
+                    className={`${stl.nameInput} ${
+                      nameError ? stl.errorBorder : ""
+                    }`}
+                    ref={nameRef}
+                  />
+                  <select
+                    className={`${stl.opdrachtSelect} ${
+                      opdrachtError ? stl.errorBorder : ""
+                    }`}
+                    ref={opdrachtRef}
+                  >
+                    <option value="default">Soort opdracht</option>
+                    <option value="Laminaat montage">Laminaat montage</option>
+                    <option value="PVC montage">PVC montage</option>
+                    <option value="Tapijt montage">Tapijt montage</option>
+                    <option value="Tegelvloer demontage">
+                      Tegelvloer demontage
+                    </option>
+                    <option value="Tapijt/Parket demontage">
+                      Tapijt/Parket demontage
+                    </option>
+                    <option value="Vloer egaliseren">Vloer egaliseren</option>
+                  </select>
+                  <div className={stl.ratingDiv}>
+                    <span className={stl.ratingSpan}>
+                      {slideValue}/10 <FaStar className={stl.star} />
+                    </span>
+                    <input
+                      type="range"
+                      min="1"
+                      max="10"
+                      step="0.1"
+                      value={slideValue}
+                      className={stl.rangeSlider}
+                      ref={sliderRef}
+                      onChange={updateSliderVlaue}
+                    />
+                  </div>
+                  <textarea
+                    className={`${stl.reviewCopy} ${
+                      copyError ? stl.errorBorder : ""
+                    }`}
+                    ref={copyRef}
+                    onChange={handleMessageLength}
+                    value={copyRef.current?.value}
+                    maxLength="335"
+                    placeholder="Uw bericht"
+                  ></textarea>
+                  <span className={stl.currMessLen}>{currentMsgLen} / 335</span>
+                  <button className={stl.verzenden} onClick={handleFormSubmit}>
+                    Verzenden <BsEnvelopeCheckFill className={stl.envelope} />
+                  </button>
+                </form>
+              </>
+            ) : (
+              <div className={stl.thanksBox}>
+                <m.span
+                  initial={{ opacity: 0, y: "-30px" }}
+                  exit={{ opacity: 0, y: "-30px" }}
+                  animate={{ opacity: 1, y: "0px" }}
+                  transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+                >
+                  Bedankt voor uw review!
+                </m.span>
+                <m.span
+                  className={stl.tnxWrap}
+                  initial={{ opacity: 0, y: "30px" }}
+                  exit={{ opacity: 0, y: "-30px" }}
+                  animate={{ opacity: 1, y: "0px" }}
+                  transition={{ duration: 0.4, ease: "easeInOut", delay: 0.2 }}
+                >
+                  <Lottie
+                    animationData={thanksAnimation}
+                    className={stl.tnxAnimation}
+                  />
+                </m.span>
               </div>
-              <textarea
-                className={`${stl.reviewCopy} ${
-                  copyError ? stl.errorBorder : ""
-                }`}
-                ref={copyRef}
-                onChange={handleMessageLength}
-                value={copyRef.current?.value}
-                maxLength="335"
-                placeholder="Uw bericht"
-              ></textarea>
-              <span className={stl.currMessLen}>{currentMsgLen} / 335</span>
-              <button className={stl.verzenden} onClick={handleFormSubmit}>
-                Verzenden <BsEnvelopeCheckFill className={stl.envelope} />
-              </button>
-            </form>
+            )}
           </m.div>
         </div>
       )}
