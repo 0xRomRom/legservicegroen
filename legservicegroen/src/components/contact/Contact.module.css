@@ -1,0 +1,48 @@
+.contact {
+  background-color: rgb(85, 147, 240);
+  overflow: hidden !important;
+}
+
+.contactWrap {
+  padding-left: 6rem;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 6rem;
+  z-index: 10;
+}
+
+.heroTitle {
+  font-size: 48px;
+  z-index: 10;
+}
+
+.blackShape {
+  width: 40px;
+  height: 11px;
+  background-color: rgb(103, 202, 207);
+  border-radius: 3rem;
+  margin-left: 10px;
+  position: relative;
+  top: -10px;
+}
+
+.lottieAnimation {
+  width: 50rem;
+  position: absolute;
+  bottom: -1rem;
+  right: 0;
+}
+
+.modalWrap {
+  position: relative;
+  height: 50rem;
+  display: flex;
+
+  justify-content: center;
+}
+
+.cornerSvg {
+  position: absolute;
+  transform: rotate(180deg);
+  top: 0;
+}

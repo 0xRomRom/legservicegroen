@@ -60,7 +60,7 @@ const AddReview = ({
       setOpdrachtError(true);
       return;
     }
-    // addNewReview(naam, opdracht, rating, bericht);
+    addNewReview(naam, opdracht, rating, bericht);
     setHasReviewed(true);
   };
 

@@ -9,6 +9,7 @@ import Specialiteiten from "./components/specialiteiten/Specialiteiten";
 import Projecten from "./components/projecten/Projecten";
 import Prijsopgave from "./components/prijsopgave/Prijsopgave";
 import Reviews from "./components/reviews/Reviews";
+import Contact from "./components/contact/Contact";
 import { useState } from "react";
 
 function App() {
@@ -34,7 +35,8 @@ function App() {
         <Route path="/specialiteiten" element={<Specialiteiten />} />
         <Route path="/projecten" element={<Projecten />} />
         <Route path="/prijsopgave" element={<Prijsopgave />} />
-        <Route path="/Reviews" element={<Reviews />} />
+        <Route path="/reviews" element={<Reviews />} />
+        <Route path="/contact" element={<Contact />} />
       </Routes>
       <Footer />
     </div>
