@@ -16,6 +16,7 @@
   height: 45rem;
   background-color: black;
   border-radius: 0.8rem;
+  box-shadow: 0px 0px 3px rgb(79, 138, 224);
 }
 
 .closeRow {
@@ -35,4 +36,122 @@
 
 .closeBtn:hover {
   color: white;
+}
+
+.reviewForm {
+  position: relative;
+  width: 100%;
+  height: calc(100% - 3.25rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 1rem;
+  color: white;
+}
+
+.nameIput {
+  width: 60%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid rgb(79, 138, 224);
+  outline: none;
+  border-radius: 0.2rem;
+  font-size: 30px;
+  padding-left: 1rem;
+  color: white;
+}
+
+.opdrachtSelect {
+  margin-top: 1rem;
+  width: 60%;
+  height: 3rem;
+  background-color: transparent;
+  border: 1px solid rgb(79, 138, 224);
+  outline: none;
+  border-radius: 0.2rem;
+  font-size: 30px;
+  padding-left: 1rem;
+  color: white;
+}
+
+.opdrachtSelect option {
+  background-color: black;
+  color: white;
+}
+
+.ratingDiv {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(79, 138, 224);
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  width: 60%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 30px;
+  padding: 1rem 0rem;
+}
+
+.ratingSpan {
+  width: 9rem;
+}
+
+.rangeSlider {
+  width: 90%;
+}
+
+.star {
+  font-size: 1.5rem;
+  color: gold;
+}
+
+.reviewCopy {
+  border: 2px solid rgb(79, 138, 224);
+  border-radius: 0.4rem;
+  margin-top: 1rem;
+  width: 60%;
+  font-size: 20px;
+  padding: 0.5rem;
+  resize: none;
+  outline: none;
+  height: 10rem;
+  background-color: rgb(0, 0, 0);
+  color: white;
+}
+
+.currMessLen {
+  color: rgb(172, 172, 172);
+}
+
+.verzenden {
+  width: 60%;
+  height: 3rem;
+  background-color: rgb(79, 138, 224);
+  color: white;
+  font-size: 20px;
+  margin-top: 2rem;
+  border: none;
+  outline: none;
+  border-radius: 0.2rem;
+  cursor: pointer;
+  text-shadow: 0px 0px 3px black;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.verzenden:hover .envelope {
+  opacity: 1;
+}
+
+.envelope {
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
 }
