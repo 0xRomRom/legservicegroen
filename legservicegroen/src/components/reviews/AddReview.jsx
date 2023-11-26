@@ -71,7 +71,7 @@ const AddReview = ({ setAddingReview, addNewReview, addingReview }) => {
             <form className={stl.reviewForm}>
               <input
                 type="text"
-                placeholder="Naam"
+                placeholder="Uw naam"
                 className={`${stl.nameInput} ${
                   nameError ? stl.errorBorder : ""
                 }`}

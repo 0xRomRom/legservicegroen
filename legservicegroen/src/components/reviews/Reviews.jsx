@@ -14,11 +14,39 @@ import AddReview from "./AddReview";
 const Reviews = () => {
   const [fetchedReviews, setFetchedReviews] = useState([]);
   const [addingReview, setAddingReview] = useState(false);
+  const [averageRating, setAverageRating] = useState(9);
 
   initializeApp(firebaseConfig);
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
+
+  useEffect(() => {
+    const dbRef = refs(getDatabase());
+    get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          console.log(snapshot.val());
+          snapshot.forEach((review) => {
+            const reviewCount = Object.entries(review.val()).length;
+            console.log(reviewCount);
+            let count = 0;
+            review.forEach((item) => {
+              const finalRes = +item.val().rating;
+              count += finalRes;
+            });
+            const average = +(count / reviewCount).toFixed(2);
+            console.log(average);
+            setAverageRating(average);
+          });
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   const addNewReview = (name, jobtype, rating, copyTxt) => {
     const db = getDatabase();
@@ -87,7 +115,7 @@ const Reviews = () => {
             animate={inView ? { opacity: 1 } : {}}
             transition={{ duration: 0.75 }}
           >
-            {inView && <NumberCounter n={9.3} />}
+            {inView && <NumberCounter n={averageRating} />}
             {inView && " / 10"}
           </m.span>
         </div>
