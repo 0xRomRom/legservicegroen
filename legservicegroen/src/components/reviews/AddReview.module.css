@@ -1,0 +1,38 @@
+.addreview {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.825);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.reviewModal {
+  width: 35rem;
+  height: 45rem;
+  background-color: black;
+  border-radius: 0.8rem;
+}
+
+.closeRow {
+  height: 3.25rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 1rem;
+}
+
+.closeBtn {
+  color: rgb(168, 168, 168);
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.closeBtn:hover {
+  color: white;
+}

@@ -9,9 +9,11 @@ import { useEffect, useState } from "react";
 import { getDatabase, get, ref as refs, set } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../utils/firebaseConfig";
+import AddReview from "./AddReview";
 
 const Reviews = () => {
   const [fetchedReviews, setFetchedReviews] = useState([]);
+  const [addingReview, setAddingReview] = useState(false);
 
   initializeApp(firebaseConfig);
   const [ref, inView] = useInView({
@@ -28,14 +30,16 @@ const Reviews = () => {
   //   });
   // };
 
+  const addReview = () => {
+    setAddingReview(true);
+  };
+
   useEffect(() => {
     // addReview();
     const dbRef = refs(getDatabase());
     get(dbRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val().reviews);
-
           setFetchedReviews([snapshot.val().reviews]);
         } else {
           console.log("No data available");
@@ -46,12 +50,10 @@ const Reviews = () => {
       });
   }, []);
 
-  useEffect(() => {
-    console.log(fetchedReviews);
-  }, [fetchedReviews]);
-
   return (
     <div className={stl.reviews}>
+      {addingReview && <AddReview setAddingReview={setAddingReview} />}
+
       <div className={stl.topBlock}>
         <div className={stl.heroBlock}>
           <h1 className={stl.heroTitle}>Reviews</h1>
@@ -91,8 +93,6 @@ const Reviews = () => {
       <div className={stl.reviewsGrid}>
         {fetchedReviews[0] &&
           Object.entries(fetchedReviews[0]).map(([key, review], index) => {
-            console.log(review);
-            console.log(key);
             return (
               <div className={stl.reviewTile} key={index}>
                 <div className={stl.revToprow}>
@@ -135,7 +135,10 @@ const Reviews = () => {
             </p>
           </div>
         </div> */}
-        <div className={`${stl.reviewTile} ${stl.addReviewTile}`}>
+        <div
+          className={`${stl.reviewTile} ${stl.addReviewTile}`}
+          onClick={addReview}
+        >
           <FaPlus className={stl.addIcon} />
           <h3 className={stl.addReviewText}>Plaats review</h3>
         </div>
