@@ -52,7 +52,6 @@ const Prijsopgave = () => {
         setInputError(true);
         return;
       }
-      console.log(typeof q2Value);
       setFormState((prevState) => {
         return {
           ...prevState,

@@ -5,11 +5,42 @@ import { motion as m } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NumberCounter from "../home/klantwaardering/NumberCounter";
 import { FaPlus } from "react-icons/fa6";
+import { useEffect } from "react";
+import { getDatabase, get, ref as refs } from "firebase/database";
+import { initializeApp } from "firebase/app";
+import firebaseConfig from "../utils/firebaseConfig";
 
 const Reviews = () => {
+  initializeApp(firebaseConfig);
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
+
+  //   const addReview = () => {
+  //     set(fireRef(db, "reviews/" + "Roms"), {
+  //       username: "Rom",
+  //       email: "rom@gmail.com",
+  //       profile_picture: "image",
+  //     });
+  //   };
+
+  useEffect(() => {
+    const dbRef = refs(getDatabase());
+    get(dbRef)
+      .then((snapshot) => {
+        if (snapshot.exists()) {
+          // Loop through the children to access individual user data
+          snapshot.forEach((childSnapshot) => {
+            console.log(childSnapshot.val());
+          });
+        } else {
+          console.log("No data available");
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
   return (
     <div className={stl.reviews}>
