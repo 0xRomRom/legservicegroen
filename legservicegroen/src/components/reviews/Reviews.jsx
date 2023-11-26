@@ -1,7 +1,7 @@
 import stl from "./Reviews.module.css";
 import Lottie from "lottie-react";
 import reviewAnimation from "../../assets/Review.json";
-import { motion as m } from "framer-motion";
+import { motion as m, AnimatePresence } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import NumberCounter from "../home/klantwaardering/NumberCounter";
 import { FaPlus } from "react-icons/fa6";
@@ -20,12 +20,12 @@ const Reviews = () => {
     triggerOnce: false,
   });
 
-  const addReview = (name, jobtype, rating, copyTxt) => {
+  const addNewReview = (name, jobtype, rating, copyTxt) => {
     const db = getDatabase();
     set(refs(db, `reviews/${Math.floor(Math.random() * 1000000000)}`), {
       name: name,
       job_type: jobtype,
-      rating: rating + "/10",
+      rating: rating,
       copy: copyTxt,
     });
   };
@@ -51,9 +51,15 @@ const Reviews = () => {
 
   return (
     <div className={stl.reviews}>
-      {addingReview && (
-        <AddReview setAddingReview={setAddingReview} addReview={addReview} />
-      )}
+      <AnimatePresence mode="wait">
+        {addingReview && (
+          <AddReview
+            setAddingReview={setAddingReview}
+            addingReview={addingReview}
+            addNewReview={addNewReview}
+          />
+        )}
+      </AnimatePresence>
 
       <div className={stl.topBlock}>
         <div className={stl.heroBlock}>
@@ -106,7 +112,7 @@ const Reviews = () => {
                     <span className={stl.userName}>{review.name}</span>
                     <span className={stl.jobType}>{review.job_type}</span>
                   </div>
-                  <div className={stl.userRating}>{review.rating}</div>
+                  <div className={stl.userRating}>{review.rating}/10</div>
                 </div>
                 <div className={stl.userCopyWrap}>
                   <p className={stl.userCopy}>"{review.copy}"</p>
