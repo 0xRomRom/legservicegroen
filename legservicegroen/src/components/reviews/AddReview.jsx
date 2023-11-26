@@ -4,11 +4,17 @@ import { useRef, useState } from "react";
 import { FaStar } from "react-icons/fa6";
 import { BsEnvelopeCheckFill } from "react-icons/bs";
 
-const AddReview = ({ setAddingReview }) => {
+const AddReview = ({ setAddingReview, addReview }) => {
   const [slideValue, setSlideValue] = useState(5.5);
   const [currentMsgLen, setCurrentMsgLen] = useState(0);
   const sliderRef = useRef();
+  const nameRef = useRef();
+  const opdrachtRef = useRef();
   const copyRef = useRef();
+
+  const [nameError, setNameError] = useState(false);
+  const [opdrachtError, setOpdrachtError] = useState(false);
+  const [copyError, setCopyError] = useState(false);
 
   const updateSliderVlaue = () => {
     setSlideValue(sliderRef.current.value);
@@ -18,9 +24,30 @@ const AddReview = ({ setAddingReview }) => {
     setAddingReview(false);
   };
 
-  const handleCopyForm = () => {
+  const handleMessageLength = () => {
     const len = copyRef.current.value.length;
     setCurrentMsgLen(len);
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setNameError(false);
+    setCopyError(false);
+    setOpdrachtError(false);
+    const rating = sliderRef.current.value;
+    const naam = nameRef.current.value;
+    const opdracht = opdrachtRef.current.value;
+    const bericht = copyRef.current.value;
+    if (naam === "" || naam === " ") {
+      setNameError(true);
+    }
+    if (bericht === "" || bericht === " " || bericht.length < 30) {
+      setCopyError(true);
+    }
+    if (opdracht === "default") {
+      setOpdrachtError(true);
+    }
+    addReview(naam, opdracht, rating, bericht);
   };
 
   return (
@@ -30,8 +57,18 @@ const AddReview = ({ setAddingReview }) => {
           <IoClose className={stl.closeBtn} onClick={closeAddingReview} />
         </div>
         <form className={stl.reviewForm}>
-          <input type="text" placeholder="Naam" className={stl.nameIput} />
-          <select className={stl.opdrachtSelect}>
+          <input
+            type="text"
+            placeholder="Naam"
+            className={`${stl.nameInput} ${nameError ? stl.errorBorder : ""}`}
+            ref={nameRef}
+          />
+          <select
+            className={`${stl.opdrachtSelect} ${
+              opdrachtError ? stl.errorBorder : ""
+            }`}
+            ref={opdrachtRef}
+          >
             <option value="default">Soort opdracht</option>
             <option value="laminaat_montage">Laminaat montage</option>
             <option value="pvc_montage">PVC montage</option>
@@ -56,15 +93,15 @@ const AddReview = ({ setAddingReview }) => {
             />
           </div>
           <textarea
-            className={stl.reviewCopy}
+            className={`${stl.reviewCopy} ${copyError ? stl.errorBorder : ""}`}
             ref={copyRef}
-            onChange={handleCopyForm}
+            onChange={handleMessageLength}
             value={copyRef.current?.value}
             maxLength="335"
             placeholder="Uw bericht"
           ></textarea>
           <span className={stl.currMessLen}>{currentMsgLen} / 335</span>
-          <button className={stl.verzenden}>
+          <button className={stl.verzenden} onClick={handleFormSubmit}>
             Verzenden <BsEnvelopeCheckFill className={stl.envelope} />
           </button>
         </form>

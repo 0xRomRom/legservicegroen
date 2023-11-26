@@ -20,22 +20,21 @@ const Reviews = () => {
     triggerOnce: false,
   });
 
-  // const addReview = () => {
-  //   const db = getDatabase();
-  //   set(refs(db, `reviews/${Math.floor(Math.random() * 1000000000)}`), {
-  //     name: "Dakdekkersbedrijf Willems",
-  //     job_type: "PVC vloer installeren",
-  //     rating: "9.5/10",
-  //     copy: "Voor ons huidige bedrijfspand waren we opzoek naar een vloerenlegger en kwamen via google uit op Legservice groen. Na wat persoonlijk contact met de eigenaar gehad te hebben, besloten om ons pand opnieuw te laten bekleden met PVC tegels. Binnen een week was het complete pand betreedbaar en naar wens! Zoek niet verder, dit is uw vloerenspecialist!",
-  //   });
-  // };
+  const addReview = (name, jobtype, rating, copyTxt) => {
+    const db = getDatabase();
+    set(refs(db, `reviews/${Math.floor(Math.random() * 1000000000)}`), {
+      name: name,
+      job_type: jobtype,
+      rating: rating + "/10",
+      copy: copyTxt,
+    });
+  };
 
-  const addReview = () => {
+  const openReviewModal = () => {
     setAddingReview(true);
   };
 
   useEffect(() => {
-    // addReview();
     const dbRef = refs(getDatabase());
     get(dbRef)
       .then((snapshot) => {
@@ -52,7 +51,9 @@ const Reviews = () => {
 
   return (
     <div className={stl.reviews}>
-      {addingReview && <AddReview setAddingReview={setAddingReview} />}
+      {addingReview && (
+        <AddReview setAddingReview={setAddingReview} addReview={addReview} />
+      )}
 
       <div className={stl.topBlock}>
         <div className={stl.heroBlock}>
@@ -114,30 +115,9 @@ const Reviews = () => {
             );
           })}
 
-        {/* <div className={stl.reviewTile}>
-          <div className={stl.revToprow}>
-            <img
-              src="./Floor4.jpg"
-              alt="User profile"
-              className={stl.userImg}
-            />
-            <div className={stl.firstBlock}>
-              <span className={stl.userName}>Robert F.</span>
-              <span className={stl.jobType}>PVC Vloer installeren</span>
-            </div>
-            <div className={stl.userRating}>8/10</div>
-          </div>
-          <div className={stl.userCopyWrap}>
-            <p className={stl.userCopy}>
-              "Vloeren leggen werd een ervaring met Legservice Groen! De
-              PVC-installatie was vakkundig en snel. De nieuwe vloer voelt
-              geweldig en ziet er fantastisch uit. Aanrader!"
-            </p>
-          </div>
-        </div> */}
         <div
           className={`${stl.reviewTile} ${stl.addReviewTile}`}
-          onClick={addReview}
+          onClick={openReviewModal}
         >
           <FaPlus className={stl.addIcon} />
           <h3 className={stl.addReviewText}>Plaats review</h3>

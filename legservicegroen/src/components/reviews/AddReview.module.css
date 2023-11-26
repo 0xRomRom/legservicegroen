@@ -13,8 +13,9 @@
 
 .reviewModal {
   width: 35rem;
-  height: 45rem;
+  height: 39rem;
   background-color: black;
+  background: linear-gradient(180deg, black, rgb(14, 14, 14));
   border-radius: 0.8rem;
   box-shadow: 0px 0px 3px rgb(79, 138, 224);
 }
@@ -50,7 +51,7 @@
   color: white;
 }
 
-.nameIput {
+.nameInput {
   width: 60%;
   height: 3rem;
   background-color: transparent;
@@ -110,7 +111,7 @@
 }
 
 .reviewCopy {
-  border: 2px solid rgb(79, 138, 224);
+  border: 1px solid rgb(79, 138, 224);
   border-radius: 0.4rem;
   margin-top: 1rem;
   width: 60%;
@@ -154,4 +155,8 @@
 .envelope {
   opacity: 0;
   transition: all 0.2s ease-in-out;
+}
+
+.errorBorder {
+  border: 1px solid red;
 }
