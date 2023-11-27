@@ -12,6 +12,7 @@ import Reviews from "./components/reviews/Reviews";
 import Contact from "./components/contact/Contact";
 import { useState } from "react";
 import ScrollToTop from "./components/utils/ScrollToTop";
+import HistoryListener from "./components/utils/HistoryListener";
 
 function App() {
   const [floorChoice, setFloorChoice] = useState("");
@@ -30,6 +31,7 @@ function App() {
 
       <Navbar setActivePage={setActivePage} activePage={activePage} />
       <ScrollToTop />
+      <HistoryListener setActivePage={setActivePage} />
       <Routes>
         <Route
           index
