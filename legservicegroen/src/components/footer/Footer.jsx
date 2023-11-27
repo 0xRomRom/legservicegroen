@@ -11,11 +11,17 @@ import { FaPenNib } from "react-icons/fa";
 import { IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({ setActivePage }) => {
   const navigate = useNavigate();
 
   const handleNavigation = (path) => {
     navigate(path);
+    localStorage.setItem("navbarLocation", path.slice(1));
+    if (path === "/") {
+      setActivePage("home");
+      return;
+    }
+    setActivePage(path.slice(1));
   };
 
   return (
@@ -37,6 +43,10 @@ const Footer = () => {
           </div>
           <div className={stl.middleBlock}>
             <ul className={stl.footerList}>
+              <li onClick={() => handleNavigation("/")}>
+                <IoIosArrowForward className={stl.selectArrow} />
+                Home
+              </li>
               <li onClick={() => handleNavigation("/portfolio")}>
                 <IoIosArrowForward className={stl.selectArrow} />
                 Portfolio

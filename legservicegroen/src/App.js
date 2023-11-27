@@ -14,6 +14,10 @@ import { useState } from "react";
 
 function App() {
   const [floorChoice, setFloorChoice] = useState("");
+  const navbarLocation =
+    localStorage.getItem("navbarLocation") || "defaultStyle";
+  const [activePage, setActivePage] = useState(navbarLocation);
+
   return (
     <div className="App">
       {floorChoice !== "" && (
@@ -23,7 +27,7 @@ function App() {
         />
       )}
 
-      <Navbar />
+      <Navbar setActivePage={setActivePage} activePage={activePage} />
       <Routes>
         <Route
           index
@@ -38,7 +42,7 @@ function App() {
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
-      <Footer />
+      <Footer setActivePage={setActivePage} />
     </div>
   );
 }

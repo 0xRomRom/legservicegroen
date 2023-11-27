@@ -12,12 +12,12 @@
 }
 
 .topWrap h1 {
-  margin-left: 6rem;
+  margin-left: 4rem;
   top: 3rem;
   position: relative;
-  font-size: 56px;
+  font-size: 48px;
   color: white;
-  background-color: black;
+  background-color: rgb(85, 147, 240);
   display: inline;
   padding-top: 0.6rem;
   padding-bottom: 1.1rem;

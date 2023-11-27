@@ -1,14 +1,17 @@
 import stl from "./Navbar.module.css";
 import logo from "../../assets/Logo.png";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = () => {
+const Navbar = ({ setActivePage, activePage }) => {
   const navigate = useNavigate();
-  const navbarLocation =
-    localStorage.getItem("navbarLocation") || "defaultStyle";
-  const [activePage, setActivePage] = useState(navbarLocation);
+
+  useEffect(() => {
+    if (!localStorage.navbarLocation) {
+      localStorage.setItem("navbarLocation", "home");
+    }
+  }, []);
 
   const tabSwitcher = (newTab) => {
     setActivePage(newTab);
