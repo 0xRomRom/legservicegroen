@@ -1,6 +1,14 @@
 import stl from "./Contact.module.css";
 import Lottie from "lottie-react";
 import contactAnimation from "../../assets/Contact.json";
+import { FaPhoneAlt } from "react-icons/fa";
+import { MdAlternateEmail } from "react-icons/md";
+import { HiOutlineClipboardDocumentCheck } from "react-icons/hi2";
+import { LuInstagram } from "react-icons/lu";
+import { BsTwitterX } from "react-icons/bs";
+import { IoLogoLinkedin } from "react-icons/io5";
+import { FaFacebook } from "react-icons/fa6";
+import { RiWhatsappFill } from "react-icons/ri";
 
 const Contact = () => {
   return (
@@ -17,6 +25,27 @@ const Contact = () => {
         <div className={stl.blackShape}> </div>
       </div>
       <div className={stl.modalWrap}>
+        <div className={stl.contactModal}>
+          <span className={stl.contactSpan}>
+            <FaPhoneAlt />
+            06 29904105
+          </span>
+          <span className={stl.contactSpan}>
+            <MdAlternateEmail />
+            legservicegroen@info.nl
+          </span>
+          <span className={stl.contactSpan}>
+            <HiOutlineClipboardDocumentCheck />
+            KVK: 331034981
+          </span>
+          <div className={stl.socialsMini}>
+            <LuInstagram className={stl.socialIcon} />
+            <BsTwitterX className={stl.socialIcon} />
+            <IoLogoLinkedin className={stl.socialIcon} />
+            <FaFacebook className={stl.socialIcon} />
+            <RiWhatsappFill className={stl.whatsapp} />
+          </div>
+        </div>
         <Lottie
           animationData={contactAnimation}
           className={stl.lottieAnimation}
