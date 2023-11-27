@@ -6,10 +6,11 @@ import { BsPeopleFill } from "react-icons/bs";
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const CtaBox = () => {
+const CtaBox = ({ setActivePage }) => {
   const navigate = useNavigate();
   const handleNavigation = (path) => {
     navigate(path);
+    setActivePage(path.slice(1));
   };
 
   return (

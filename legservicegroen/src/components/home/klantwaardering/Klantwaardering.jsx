@@ -11,7 +11,7 @@ import { getDatabase, get, ref as refs, set } from "firebase/database";
 import { initializeApp } from "firebase/app";
 import firebaseConfig from "../../utils/firebaseConfig";
 
-const Klantwaardering = () => {
+const Klantwaardering = ({ setActivePage }) => {
   initializeApp(firebaseConfig);
   const [averageRating, setAverageRating] = useState(9);
   const navigate = useNavigate();
@@ -20,6 +20,7 @@ const Klantwaardering = () => {
   });
   const handleNavigation = () => {
     navigate("/reviews");
+    setActivePage("reviews");
   };
 
   useEffect(() => {

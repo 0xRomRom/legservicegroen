@@ -3,7 +3,7 @@ import { motion as m, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 import { useNavigate } from "react-router-dom";
 
-const Portfolio = ({ setFloorChoice }) => {
+const Portfolio = ({ setFloorChoice, setActivePage }) => {
   const navigate = useNavigate();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -20,6 +20,7 @@ const Portfolio = ({ setFloorChoice }) => {
 
   const handleNavigation = () => {
     navigate("/portfolio");
+    setActivePage("portfolio");
   };
 
   return (

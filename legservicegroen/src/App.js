@@ -32,12 +32,20 @@ function App() {
         <Route
           index
           path="/"
-          element={<Home setFloorChoice={setFloorChoice} />}
+          element={
+            <Home
+              setFloorChoice={setFloorChoice}
+              setActivePage={setActivePage}
+            />
+          }
         />
 
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/specialiteiten" element={<Specialiteiten />} />
-        <Route path="/projecten" element={<Projecten />} />
+        <Route
+          path="/projecten"
+          element={<Projecten setActivePage={setActivePage} />}
+        />
         <Route path="/prijsopgave" element={<Prijsopgave />} />
         <Route path="/reviews" element={<Reviews />} />
         <Route path="/contact" element={<Contact />} />

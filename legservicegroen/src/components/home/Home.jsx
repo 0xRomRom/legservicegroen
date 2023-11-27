@@ -8,15 +8,18 @@ import CtaBox from "./ctabox/CtaBox";
 
 import { motion as m } from "framer-motion";
 
-const Home = ({ setFloorChoice }) => {
+const Home = ({ setFloorChoice, setActivePage }) => {
   return (
     <m.div className={stl.home}>
       <Header />
-      <Diensten />
-      <Portfolio setFloorChoice={setFloorChoice} />
+      <Diensten setActivePage={setActivePage} />
+      <Portfolio
+        setFloorChoice={setFloorChoice}
+        setActivePage={setActivePage}
+      />
       <MarqueeBar />
-      <Klantwaardering />
-      <CtaBox />
+      <Klantwaardering setActivePage={setActivePage} />
+      <CtaBox setActivePage={setActivePage} />
     </m.div>
   );
 };

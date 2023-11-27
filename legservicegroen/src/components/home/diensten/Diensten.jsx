@@ -3,11 +3,12 @@ import { FaArrowRight } from "react-icons/fa";
 import { motion as m } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 
-const Diensten = () => {
+const Diensten = ({ setActivePage }) => {
   const navigate = useNavigate();
 
   const handleNavigation = () => {
     navigate("/specialiteiten");
+    setActivePage("specialiteiten");
   };
 
   return (
