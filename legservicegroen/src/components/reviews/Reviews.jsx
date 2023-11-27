@@ -27,17 +27,14 @@ const Reviews = () => {
     get(dbRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
-          console.log(snapshot.val());
           snapshot.forEach((review) => {
             const reviewCount = Object.entries(review.val()).length;
-            console.log(reviewCount);
             let count = 0;
             review.forEach((item) => {
               const finalRes = +item.val().rating;
               count += finalRes;
             });
             const average = +(count / reviewCount).toFixed(2);
-            console.log(average);
             setAverageRating(average);
           });
         } else {

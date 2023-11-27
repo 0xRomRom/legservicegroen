@@ -1,5 +1,6 @@
 .contact {
   background-color: rgb(85, 147, 240);
+  background: linear-gradient(150deg, rgb(85, 147, 240), rgb(25, 92, 192));
   overflow: hidden;
 }
 
