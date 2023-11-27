@@ -67,7 +67,7 @@
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  font-size: 3rem;
+  font-size: 48px;
   color: white;
 }
 
@@ -92,10 +92,13 @@
 }
 
 .whatsapp {
-  color: green;
-  background-color: rgb(85, 147, 240);
+  color: rgb(231, 231, 231);
   border-radius: 50%;
   font-size: 40px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+}
+
+.whatsapp:hover {
+  color: white;
 }
